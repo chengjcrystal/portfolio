@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "About — Crystal Cheng",
-  description:
-    "About Crystal Cheng — CS and Applied Math student at UC Berkeley.",
+  description: "A bit about Crystal Cheng — CS + Applied Math at Berkeley.",
 };
 
 export default function AboutPage() {
@@ -16,24 +15,23 @@ export default function AboutPage() {
       <div className="about-grid">
         <div>
           <h2 className="about-title">
-            I care about building
+            I like ML work that&apos;s
             <br />
-            intelligent systems that are
+            careful and
             <br />
-            <em>rigorous</em> and genuinely useful.
+            <em>actually</em> useful.
           </h2>
 
           <p className="about-body">
-            I&apos;m studying Computer Science and Applied Mathematics at UC
-            Berkeley, where I split my time between research questions and the
-            engineering work that turns them into something real. I&apos;m drawn
-            to problems where good math and good systems design meet.
+            I&apos;m in CS and Applied Math at Berkeley. I spend a lot of time on
+            research ideas and the engineering to make them run. I&apos;m most
+            interested in problems where the math and the systems side both
+            matter.
           </p>
 
           <p className="about-body">
-            Outside of models and pipelines, I think a lot about how
-            research-grade work can be made approachable — clear evaluation,
-            honest results, and interfaces people actually want to use.
+            I also care about making research legible — good evals, honest
+            numbers, and UIs people don&apos;t hate.
           </p>
 
           <div className="two-col">
@@ -54,7 +52,7 @@ export default function AboutPage() {
                 </li>
                 <li>
                   <span className="idot" />
-                  Intelligent Systems
+                  ML Systems
                 </li>
                 <li>
                   <span className="idot" />

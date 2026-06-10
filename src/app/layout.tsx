@@ -26,7 +26,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Crystal Cheng — AI/ML Engineer",
   description:
-    "Crystal is a CS and Applied Math student at UC Berkeley building ML systems at the intersection of research and engineering.",
+    "CS + Applied Math at Berkeley. ML, NLP, retrieval, and production infra.",
 };
 
 export default function RootLayout({

@@ -10,9 +10,8 @@ export default function Home() {
             <span>Cheng</span>
           </h1>
           <p className="hero-desc">
-            I build machine learning systems at the intersection of research and
-            engineering — from transformer-based NLP and retrieval pipelines to
-            the cloud infrastructure that makes intelligent systems scale.
+            I work on ML — mostly NLP, retrieval, and the infra to run models in
+            production.
           </p>
           <div className="btn-row">
             <a
@@ -44,7 +43,7 @@ export default function Home() {
 
         <div className="hero-right">
           <div className="illus-box">
-            <span className="illus-tag">{"{ building intelligent systems }"}</span>
+            <span className="illus-tag">{"{ ml, nlp, infra }"}</span>
             <i
               className="ti ti-pencil"
               style={{ fontSize: 22, color: "var(--brown4)" }}
@@ -73,9 +72,9 @@ export default function Home() {
                 <span className="exp-role">ML Infrastructure Engineer Intern</span>
               </div>
               <p className="exp-desc">
-                Built data pipelines and model-serving infrastructure for
-                hardware-configuration workloads, cutting inference latency and
-                standardizing evaluation across teams.
+                Built data pipelines and model-serving infra for
+                hardware-configuration workloads. Cut inference latency and gave
+                teams a shared way to eval models.
               </p>
               <div className="chip-row">
                 <span className="chip">Python</span>
@@ -90,12 +89,11 @@ export default function Home() {
             <div>
               <div className="exp-top">
                 <span className="exp-company">Newrium Foundation</span>
-                <span className="exp-role">Software Engineer Engineer</span>
+                <span className="exp-role">Software Engineer</span>
               </div>
               <p className="exp-desc">
-                Designed NLP models for document understanding and developed
-                retrieval pipelines that powered semantic search across a large
-                knowledge corpus.
+                Worked on NLP for document parsing and a retrieval stack for
+                semantic search over a large internal doc set.
               </p>
               <div className="chip-row">
                 <span className="chip">NLP</span>
@@ -113,9 +111,9 @@ export default function Home() {
                 <span className="exp-role">Software Engineer</span>
               </div>
               <p className="exp-desc">
-                Shipped backend services and learning tools used in classrooms,
-                focusing on reliability and clean APIs for real-time robotics
-                education.
+                Shipped backend services and classroom tools for robotics
+                education. Spent a lot of time on APIs that had to stay up
+                during live demos.
               </p>
               <div className="chip-row">
                 <span className="chip">APIs</span>
@@ -133,8 +131,8 @@ export default function Home() {
                 <span className="exp-role">Machine Learning Intern</span>
               </div>
               <p className="exp-desc">
-                Contributed to product features and internal tooling, learning to
-                balance fast iteration with maintainable, well-tested code.
+                Built product features and internal tools. Learned how to ship
+                fast without letting the codebase fall apart.
               </p>
               <div className="chip-row">
                 <span className="chip">Full-stack</span>
@@ -148,10 +146,8 @@ export default function Home() {
 
       <section className="section" id="projects">
         <div className="section-header">
-          <h2 className="section-title">Selected AI Work</h2>
-          <span className="section-aside">
-            Problem &nbsp;→&nbsp; Approach &nbsp;→&nbsp; Outcome
-          </span>
+          <h2 className="section-title">Projects</h2>
+          <span className="section-aside">A few things I&apos;ve built</span>
         </div>
 
         <div className="proj-grid">
@@ -163,28 +159,28 @@ export default function Home() {
               </a>
             </div>
             <p className="proj-sub">
-              Transformer-based personality prediction from free-form text.
+              Guess MBTI from text using a fine-tuned transformer.
             </p>
             <div className="pao">
               <div className="pao-row">
                 <span className="pao-key">Problem</span>
                 <span>
-                  Personality inference from short text is noisy and easy to
-                  overfit on surface patterns.
+                  Short text is a noisy signal for personality — easy to overfit
+                  on word choice.
                 </span>
               </div>
               <div className="pao-row">
                 <span className="pao-key">Approach</span>
                 <span>
-                  Fine-tuned a HuggingFace transformer for multi-label text
-                  classification with careful data balancing and calibration.
+                  Fine-tuned a HuggingFace model with balanced training data and
+                  calibrated outputs.
                 </span>
               </div>
               <div className="pao-row">
                 <span className="pao-key">Outcome</span>
                 <span>
-                  Robust 16-type predictions with confidence scores, deployed
-                  behind a lightweight inference API.
+                  16-type predictions with confidence scores, wrapped in a small
+                  inference API.
                 </span>
               </div>
             </div>
@@ -203,29 +199,29 @@ export default function Home() {
               </a>
             </div>
             <p className="proj-sub">
-              Embedding-based retrieval with a rigorous evaluation pipeline.
+              Embedding search with an eval harness to measure if it actually
+              worked.
             </p>
             <div className="pao">
               <div className="pao-row">
                 <span className="pao-key">Problem</span>
                 <span>
-                  Keyword search broke down on a large, domain-specific corpus
-                  where intent rarely matched exact terms.
+                  Keyword search fell apart on a big domain-specific corpus —
+                  people rarely used the exact terms in the docs.
                 </span>
               </div>
               <div className="pao-row">
                 <span className="pao-key">Approach</span>
                 <span>
-                  Built an embeddings + vector-index retrieval system with
-                  reranking, plus an automated eval harness measuring recall and
-                  relevance.
+                  Embeddings + vector index + reranking, with automated evals on
+                  recall and relevance.
                 </span>
               </div>
               <div className="pao-row">
                 <span className="pao-key">Outcome</span>
                 <span>
-                  Materially higher top-k relevance and a scalable architecture
-                  that holds up as the corpus grows.
+                  Better top-k results, and a setup that still works as the corpus
+                  keeps growing.
                 </span>
               </div>
             </div>
@@ -233,7 +229,7 @@ export default function Home() {
               <span className="chip">Embeddings</span>
               <span className="chip">Retrieval</span>
               <span className="chip">Evaluation</span>
-              <span className="chip">Scalable Infra</span>
+              <span className="chip">Infra</span>
             </div>
           </div>
         </div>

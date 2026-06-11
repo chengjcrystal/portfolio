@@ -1,6 +1,19 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Nav() {
+  const pathname = usePathname();
+
+  // smooth scroll for same-page hash links, normal nav otherwise
+  const handleHash = (e: React.MouseEvent<HTMLAnchorElement>, hash: string) => {
+    if (pathname === "/") {
+      e.preventDefault();
+      document.querySelector(hash)?.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <nav>
       <Link href="/" className="nav-logo">
@@ -8,10 +21,19 @@ export default function Nav() {
       </Link>
       <ul className="nav-links">
         <li>
-          <Link href="/#experience">Work</Link>
+          <a href="/#experience" onClick={(e) => handleHash(e, "#experience")}>
+            Experience
+          </a>
         </li>
         <li>
-          <Link href="/#projects">Projects</Link>
+          <a href="/#projects" onClick={(e) => handleHash(e, "#projects")}>
+            Projects
+          </a>
+        </li>
+        <li>
+          <a href="/#skills" onClick={(e) => handleHash(e, "#skills")}>
+            Skills
+          </a>
         </li>
         <li>
           <Link href="/about">About</Link>

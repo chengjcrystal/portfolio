@@ -1,9 +1,15 @@
 import type { Metadata } from "next";
-import { DM_Sans, JetBrains_Mono, Nunito } from "next/font/google";
+import { DM_Sans, JetBrains_Mono, Nunito, Fredoka } from "next/font/google";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import ScrollHandler from "@/components/ScrollHandler";
 import "./globals.css";
+
+const fredoka = Fredoka({
+  subsets: ["latin"],
+  weight: ["600", "700"],
+  variable: "--font-fredoka",
+});
 
 const nunito = Nunito({
   subsets: ["latin"],
@@ -24,9 +30,8 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Crystal Cheng — AI/ML Engineer",
-  description:
-    "CS + Applied Math at Berkeley. ML, NLP, retrieval, and production infra.",
+  title: "Crystal Cheng · Software Engineer",
+  description: "CS + Applied Math at UC Berkeley. Full-stack, AWS, and ML work.",
 };
 
 export default function RootLayout({
@@ -43,7 +48,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${nunito.variable} ${dmSans.variable} ${jetbrainsMono.variable}`}
+        className={`${nunito.variable} ${dmSans.variable} ${jetbrainsMono.variable} ${fredoka.variable}`}
       >
         <Nav />
         {children}

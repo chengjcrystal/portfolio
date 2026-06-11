@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About — Crystal Cheng",
-  description: "A bit about Crystal Cheng — CS + Applied Math at Berkeley.",
+  title: "About · Crystal Cheng",
+  description: "CS + Applied Math at UC Berkeley. Expected Dec 2026.",
 };
 
 export default function AboutPage() {
@@ -15,60 +15,57 @@ export default function AboutPage() {
       <div className="about-grid">
         <div>
           <h2 className="about-title">
-            I like ML work that&apos;s
+            CS and Applied Math
             <br />
-            careful and
-            <br />
-            <em>actually</em> useful.
+            at Berkeley.
           </h2>
 
           <p className="about-body">
-            I&apos;m in CS and Applied Math at Berkeley. I spend a lot of time on
-            research ideas and the engineering to make them run. I&apos;m most
-            interested in problems where the math and the systems side both
-            matter.
+            I&apos;m graduating in Dec 2026 with a BA in Computer Science and
+            Applied Mathematics. Outside class I&apos;m Treasurer for Society of
+            Women Engineers and build for Web Development at Berkeley and Berkeley
+            Project.
           </p>
 
           <p className="about-body">
-            I also care about making research legible — good evals, honest
-            numbers, and UIs people don&apos;t hate.
+            Most of my internships have been full-stack or backend work: Next.js
+            and React on the frontend, AWS and Terraform on the infra side, plus
+            some ML for matching and retrieval when the product needs it.
           </p>
 
           <div className="two-col">
             <div>
-              <p className="list-label">Research interests</p>
+              <p className="list-label">Interests</p>
               <ul className="interest-list">
                 <li>
                   <span className="idot" />
-                  Machine Learning
+                  Full-stack web development
                 </li>
                 <li>
                   <span className="idot" />
-                  NLP &amp; Language Models
+                  Machine learning
                 </li>
                 <li>
                   <span className="idot" />
-                  Retrieval Systems
+                  Cloud infrastructure
                 </li>
                 <li>
                   <span className="idot" />
-                  ML Systems
-                </li>
-                <li>
-                  <span className="idot" />
-                  Cloud Infrastructure
+                  Retrieval and NLP
                 </li>
               </ul>
             </div>
             <div>
-              <p className="list-label">Favorite tools</p>
+              <p className="list-label">Tools I use</p>
               <div className="tag-row">
-                <span className="tag">PyTorch</span>
-                <span className="tag">HuggingFace</span>
                 <span className="tag">Python</span>
+                <span className="tag">React</span>
+                <span className="tag">Next.js</span>
                 <span className="tag">TypeScript</span>
-                <span className="tag">Vector DBs</span>
-                <span className="tag">Kubernetes</span>
+                <span className="tag">PyTorch</span>
+                <span className="tag">AWS</span>
+                <span className="tag">Terraform</span>
+                <span className="tag">Docker</span>
               </div>
             </div>
           </div>

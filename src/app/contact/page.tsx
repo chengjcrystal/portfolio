@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact — Crystal",
+  title: "Contact · Crystal Cheng",
   description: "How to reach Crystal Cheng.",
 };
 
@@ -15,8 +15,8 @@ export default function ContactPage() {
           <span>talk.</span>
         </h1>
         <p className="contact-sub">
-          Open to ML engineering roles and research collabs. Email me — happy to
-          talk about work, or Berkeley food spots if you ask.
+          Open to software engineering internships and full-time roles. Email me,
+          or ask about Berkeley food spots.
         </p>
 
         <div className="contact-links">

@@ -1,237 +1,363 @@
 export default function Home() {
   return (
     <>
+      {/* hero */}
       <div className="hero">
-        <div className="hero-left">
-          <p className="eyebrow">UC Berkeley &nbsp;·&nbsp; CS + Applied Math</p>
-          <h1 className="hero-name">
-            Crystal
-            <br />
-            <span>Cheng</span>
-          </h1>
-          <p className="hero-desc">
-            I work on ML — mostly NLP, retrieval, and the infra to run models in
-            production.
-          </p>
-          <div className="btn-row">
-            <a
-              className="btn btn-solid"
-              href="/assets/crystal-resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i className="ti ti-download" /> Resume
-            </a>
-            <a
-              className="btn"
-              href="https://linkedin.com/in/chengjcrystal"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i className="ti ti-brand-linkedin" /> LinkedIn
-            </a>
-            <a
-              className="btn"
-              href="https://github.com/chengjcrystal"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i className="ti ti-brand-github" /> GitHub
-            </a>
+        <div className="hero-inner">
+
+          <div className="hero-left">
+            <p className="eyebrow">UC Berkeley &nbsp;·&nbsp; CS + Applied Math</p>
+            <h1 className="hero-name" style={{ fontFamily: "var(--font-fredoka), sans-serif" }}>
+              <span className="hero-name-crystal">Crystal</span>
+              <span className="hero-name-cheng">Cheng</span>
+            </h1>
+            <p className="hero-desc">
+              Software engineer intern. I&apos;ve shipped Next.js features, AWS
+              backends, and ML pipelines for mentor matching and lecture Q&amp;A.
+            </p>
+            <div className="btn-row">
+              <a
+                className="btn btn-solid"
+                href="/assets/crystal-resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="ti ti-file-text" /> Resume
+              </a>
+              <a
+                className="btn btn-solid"
+                href="https://linkedin.com/in/chengjcrystal"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="ti ti-brand-linkedin" /> LinkedIn
+              </a>
+              <a
+                className="btn btn-solid"
+                href="https://github.com/chengjcrystal"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="ti ti-brand-github" /> GitHub
+              </a>
+            </div>
           </div>
+
+          <div className="hero-right">
+            <div className="moodboard">
+
+              <div className="mb-tape mb-tape--top" />
+
+              {/* yellow sticky — bear instead of star */}
+              <div className="mb-sticky mb-sticky--yellow">
+                <span className="mb-sticky-label">who</span>
+                <p className="mb-sticky-text">
+                  cs + math<br />@ berkeley
+                  {/* teddy bear doodle */}
+                  <svg
+                    viewBox="0 0 28 28"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    style={{ display: "inline-block", width: 22, height: 22, verticalAlign: "middle", marginLeft: 4 }}
+                  >
+                    {/* ears */}
+                    <circle cx="7" cy="7" r="4" fill="#C8A882" />
+                    <circle cx="21" cy="7" r="4" fill="#C8A882" />
+                    <circle cx="7" cy="7" r="2" fill="#B8967A" />
+                    <circle cx="21" cy="7" r="2" fill="#B8967A" />
+                    {/* head */}
+                    <circle cx="14" cy="14" r="8" fill="#C8A882" />
+                    {/* snout */}
+                    <ellipse cx="14" cy="16.5" rx="3.5" ry="2.5" fill="#B8967A" />
+                    {/* eyes */}
+                    <circle cx="11" cy="12.5" r="1.2" fill="#5C3D26" />
+                    <circle cx="17" cy="12.5" r="1.2" fill="#5C3D26" />
+                    {/* nose */}
+                    <ellipse cx="14" cy="15.8" rx="1.2" ry="0.8" fill="#5C3D26" />
+                  </svg>
+                </p>
+              </div>
+
+              {/* polaroid — square screen */}
+              <div className="mb-polaroid">
+                <div className="mb-polaroid-screen">
+                  <span className="mb-code-line"><em>const</em> stack = [</span>
+                  <span className="mb-code-line">&nbsp;&nbsp;<em className="mb-str">&quot;react&quot;</em>,</span>
+                  <span className="mb-code-line">&nbsp;&nbsp;<em className="mb-str">&quot;aws&quot;</em>,</span>
+                  <span className="mb-code-line">&nbsp;&nbsp;<em className="mb-str">&quot;pytorch&quot;</em>,</span>
+                  <span className="mb-code-line">]</span>
+                  <span className="mb-code-line" style={{ marginTop: "4px" }}>
+                    <em className="mb-comment">// fuel: french vanilla ☕</em>
+                  </span>
+                </div>
+                <p className="mb-polaroid-caption">my stack ♡</p>
+              </div>
+
+              {/* pink sticky */}
+              <div className="mb-sticky mb-sticky--pink">
+                <span className="mb-sticky-label">currently</span>
+                <p className="mb-sticky-text">interning @<br />hyve solutions</p>
+              </div>
+
+              <div className="mb-tape mb-tape--corner" />
+            </div>
+          </div>
+
         </div>
 
-        <div className="hero-right">
-          <div className="illus-box">
-            <span className="illus-tag">{"{ ml, nlp, infra }"}</span>
-            <i
-              className="ti ti-pencil"
-              style={{ fontSize: 22, color: "var(--brown4)" }}
-            />
-            <span className="illus-placeholder-text">
-              Your drawing
-              <br />
-              goes here
-            </span>
-          </div>
+        <div className="hero-scroll-hint">
+          <i className="ti ti-arrow-down" />
         </div>
       </div>
 
+      {/* experience */}
       <section className="section" id="experience">
         <div className="section-header">
           <h2 className="section-title">Experience</h2>
-          <span className="section-aside">Selected Work</span>
+          <span className="section-aside">the journey so far ✦</span>
         </div>
 
         <div className="exp-list">
+
           <div className="exp-row">
-            <div className="exp-year">2025</div>
+            <div className="exp-meta">
+              <div className="exp-date-full">Jun 2026 – Present</div>
+            </div>
             <div>
               <div className="exp-top">
                 <span className="exp-company">Hyve Solutions</span>
-                <span className="exp-role">ML Infrastructure Engineer Intern</span>
+                <span className="exp-role">Software Engineer Intern</span>
               </div>
               <p className="exp-desc">
-                Built data pipelines and model-serving infra for
-                hardware-configuration workloads. Cut inference latency and gave
-                teams a shared way to eval models.
+                Software Engineer Team in Manufacturing &amp; Integration.
               </p>
               <div className="chip-row">
-                <span className="chip">Python</span>
-                <span className="chip">Distributed Systems</span>
-                <span className="chip">Model Serving</span>
+                <span className="chip">Software Engineering</span>
+                <span className="chip">Manufacturing</span>
               </div>
             </div>
           </div>
 
           <div className="exp-row">
-            <div className="exp-year">2024</div>
+            <div className="exp-meta">
+              <div className="exp-date-full">Sep 2025 – Dec 2025</div>
+            </div>
             <div>
               <div className="exp-top">
                 <span className="exp-company">Newrium Foundation</span>
-                <span className="exp-role">Software Engineer</span>
+                <span className="exp-role">Software Engineer Intern</span>
               </div>
               <p className="exp-desc">
-                Worked on NLP for document parsing and a retrieval stack for
-                semantic search over a large internal doc set.
+                Owned development of customer-facing support and FAQ workflows,
+                translating Figma designs into production-ready Next.js features
+                and coordinating frontend integration across a 15-person
+                cross-functional team on a 10-week timeline. Shipped 15+ reusable
+                React/TypeScript components and architected MySQL schemas storing
+                100+ records with a Node.js email automation pipeline.
               </p>
               <div className="chip-row">
-                <span className="chip">NLP</span>
-                <span className="chip">Embeddings</span>
-                <span className="chip">Retrieval</span>
+                <span className="chip">Next.js</span>
+                <span className="chip">React</span>
+                <span className="chip">TypeScript</span>
+                <span className="chip">MySQL</span>
+                <span className="chip">Node.js</span>
               </div>
             </div>
           </div>
 
           <div className="exp-row">
-            <div className="exp-year">2023</div>
+            <div className="exp-meta">
+              <div className="exp-date-full">May 2025 – Aug 2025</div>
+            </div>
             <div>
               <div className="exp-top">
                 <span className="exp-company">Barobo</span>
-                <span className="exp-role">Software Engineer</span>
+                <span className="exp-role">Software Engineer Intern</span>
               </div>
               <p className="exp-desc">
-                Shipped backend services and classroom tools for robotics
-                education. Spent a lot of time on APIs that had to stay up
-                during live demos.
+                Blocked unauthorized video sharing across 100% of user traffic
+                with AWS CloudFront signed URLs and per-user DynamoDB access
+                tracking, scaling to 10,000+ monthly requests. Reduced video load
+                time by 5% via CloudFront edge caching, and rewrote deployment as
+                Terraform + AWS CLI scripts, cutting provisioning from 2 hours to
+                15 minutes.
               </p>
               <div className="chip-row">
-                <span className="chip">APIs</span>
-                <span className="chip">Backend</span>
-                <span className="chip">Real-time</span>
+                <span className="chip">AWS</span>
+                <span className="chip">CloudFront</span>
+                <span className="chip">DynamoDB</span>
+                <span className="chip">Terraform</span>
               </div>
             </div>
           </div>
 
           <div className="exp-row">
-            <div className="exp-year">2022</div>
+            <div className="exp-meta">
+              <div className="exp-date-full">May 2024 – May 2025</div>
+            </div>
             <div>
               <div className="exp-top">
-                <span className="exp-company">Opal</span>
+                <span className="exp-company">Opal Mentorship App</span>
                 <span className="exp-role">Machine Learning Intern</span>
               </div>
               <p className="exp-desc">
-                Built product features and internal tools. Learned how to ship
-                fast without letting the codebase fall apart.
+                Raised mentor-mentee match accuracy by 12% across cohorts by
+                tuning 6 algorithmic scoring weights over two rounds of iteration.
+                Built a repeatable AWS Lambda + DynamoDB evaluation pipeline
+                scoring compatibility across 4 behavioral dimensions, and a
+                JavaScript dashboard visualizing distributions that drove 2 rounds
+                of weight calibration.
               </p>
               <div className="chip-row">
-                <span className="chip">Full-stack</span>
-                <span className="chip">Tooling</span>
-                <span className="chip">Testing</span>
+                <span className="chip">AWS Lambda</span>
+                <span className="chip">DynamoDB</span>
+                <span className="chip">JavaScript</span>
               </div>
             </div>
           </div>
+
+          <div className="exp-row">
+            <div className="exp-meta">
+              <div className="exp-date-full">Jan 2024 – May 2024</div>
+            </div>
+            <div>
+              <div className="exp-top">
+                <span className="exp-company">Swingbeats Research Lab</span>
+                <span className="exp-role">Frontend Web Developer</span>
+              </div>
+              <p className="exp-desc">
+                Redesigned the haptic feedback research lab website in Figma and
+                rebuilt it with React, HTML, and CSS — responsive across desktop,
+                tablet, and mobile. Refactored the homepage into reusable
+                components, cutting redundant render logic across 3 page sections.
+              </p>
+              <div className="chip-row">
+                <span className="chip">React</span>
+                <span className="chip">Figma</span>
+                <span className="chip">HTML/CSS</span>
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
 
+      {/* projects */}
       <section className="section" id="projects">
         <div className="section-header">
           <h2 className="section-title">Projects</h2>
-          <span className="section-aside">A few things I&apos;ve built</span>
+          <span className="section-aside">stuff i actually built 🛠</span>
         </div>
 
         <div className="proj-grid">
-          <div className="proj-card">
-            <div className="proj-card-top">
-              <div className="proj-name">MBTI Guesser</div>
-              <a href="#" aria-label="View project">
-                <i className="ti ti-arrow-up-right proj-link" />
-              </a>
-            </div>
-            <p className="proj-sub">
-              Guess MBTI from text using a fine-tuned transformer.
-            </p>
-            <div className="pao">
-              <div className="pao-row">
-                <span className="pao-key">Problem</span>
-                <span>
-                  Short text is a noisy signal for personality — easy to overfit
-                  on word choice.
-                </span>
+
+          <div className="proj-card proj-card--tilt-left">
+            <div className="proj-tape" />
+            <div className="proj-card-inner">
+              <div className="proj-card-top">
+                <div className="proj-name">
+                  Multimodal Lecture Summarizer with Retrieval-Augmented Q&amp;A
+                </div>
+                <a href="https://github.com/chengjcrystal" target="_blank" rel="noopener noreferrer" aria-label="View project">
+                  <i className="ti ti-arrow-up-right proj-link" />
+                </a>
               </div>
-              <div className="pao-row">
-                <span className="pao-key">Approach</span>
-                <span>
-                  Fine-tuned a HuggingFace model with balanced training data and
-                  calibrated outputs.
-                </span>
+              <p className="proj-sub">
+                Lecture Q&amp;A in Python: Whisper for transcription,
+                sentence-transformers over FAISS for retrieval, FastAPI for the
+                API. Evaluated on 20 held-out questions with ROUGE-L — 300-token
+                chunks beat 100-token by 14% ROUGE.
+              </p>
+              <div className="chip-row">
+                <span className="chip">PyTorch</span>
+                <span className="chip">Whisper</span>
+                <span className="chip">LangChain</span>
+                <span className="chip">FastAPI</span>
               </div>
-              <div className="pao-row">
-                <span className="pao-key">Outcome</span>
-                <span>
-                  16-type predictions with confidence scores, wrapped in a small
-                  inference API.
-                </span>
-              </div>
-            </div>
-            <div className="chip-row">
-              <span className="chip">Transformers</span>
-              <span className="chip">HuggingFace</span>
-              <span className="chip">Text Classification</span>
             </div>
           </div>
 
-          <div className="proj-card">
-            <div className="proj-card-top">
-              <div className="proj-name">Semantic Retrieval Engine</div>
-              <a href="#" aria-label="View project">
-                <i className="ti ti-arrow-up-right proj-link" />
-              </a>
-            </div>
-            <p className="proj-sub">
-              Embedding search with an eval harness to measure if it actually
-              worked.
-            </p>
-            <div className="pao">
-              <div className="pao-row">
-                <span className="pao-key">Problem</span>
-                <span>
-                  Keyword search fell apart on a big domain-specific corpus —
-                  people rarely used the exact terms in the docs.
-                </span>
+          <div className="proj-card proj-card--tilt-right">
+            <div className="proj-tape" />
+            <div className="proj-card-inner">
+              <div className="proj-card-top">
+                <div className="proj-name">Opal Mentorship App</div>
+                <a href="https://github.com/chengjcrystal" target="_blank" rel="noopener noreferrer" aria-label="View project">
+                  <i className="ti ti-arrow-up-right proj-link" />
+                </a>
               </div>
-              <div className="pao-row">
-                <span className="pao-key">Approach</span>
-                <span>
-                  Embeddings + vector index + reranking, with automated evals on
-                  recall and relevance.
-                </span>
+              <p className="proj-sub">
+                Mentor-mentee matching with tunable scoring weights and an AWS
+                Lambda evaluation pipeline across four behavioral dimensions.
+              </p>
+              <div className="chip-row">
+                <span className="chip">MongoDB</span>
+                <span className="chip">Express</span>
+                <span className="chip">Node.js</span>
+                <span className="chip">JavaScript</span>
               </div>
-              <div className="pao-row">
-                <span className="pao-key">Outcome</span>
-                <span>
-                  Better top-k results, and a setup that still works as the corpus
-                  keeps growing.
-                </span>
-              </div>
-            </div>
-            <div className="chip-row">
-              <span className="chip">Embeddings</span>
-              <span className="chip">Retrieval</span>
-              <span className="chip">Evaluation</span>
-              <span className="chip">Infra</span>
             </div>
           </div>
+
+        </div>
+      </section>
+
+      {/* skills — corkboard */}
+      <section className="section" id="skills">
+        <div className="section-header">
+          <h2 className="section-title">Skills</h2>
+          <span className="section-aside">my toolkit 🗂</span>
+        </div>
+
+        <div className="skills-notes">
+
+          <div className="skill-note skill-note--yellow skill-group">
+            <span className="skill-note-label">what i write in</span>
+            <div className="skill-note-title">Languages</div>
+            <div className="skill-note-tags">
+              <span className="skill-note-tag">Python</span>
+              <span className="skill-note-tag">C/C++</span>
+              <span className="skill-note-tag">JavaScript</span>
+              <span className="skill-note-tag">SQL</span>
+              <span className="skill-note-tag">Bash</span>
+              <span className="skill-note-tag">HTML/CSS</span>
+              <span className="skill-note-tag">Tailwind</span>
+              <span className="skill-note-tag">MATLAB</span>
+            </div>
+          </div>
+
+          <div className="skill-note skill-note--pink skill-group">
+            <span className="skill-note-label">what i build with</span>
+            <div className="skill-note-title">ML & Frameworks</div>
+            <div className="skill-note-tags">
+              <span className="skill-note-tag">PyTorch</span>
+              <span className="skill-note-tag">Sklearn</span>
+              <span className="skill-note-tag">NumPy</span>
+              <span className="skill-note-tag">Pandas</span>
+              <span className="skill-note-tag">React</span>
+              <span className="skill-note-tag">Next.js</span>
+              <span className="skill-note-tag">Bootstrap</span>
+              <span className="skill-note-tag">REST APIs</span>
+            </div>
+          </div>
+
+          <div className="skill-note skill-note--blue skill-group">
+            <span className="skill-note-label">where it runs</span>
+            <div className="skill-note-title">Cloud & DevOps</div>
+            <div className="skill-note-tags">
+              <span className="skill-note-tag">AWS S3</span>
+              <span className="skill-note-tag">CloudFront</span>
+              <span className="skill-note-tag">DynamoDB</span>
+              <span className="skill-note-tag">Lambda</span>
+              <span className="skill-note-tag">Git</span>
+              <span className="skill-note-tag">Linux</span>
+              <span className="skill-note-tag">Docker</span>
+              <span className="skill-note-tag">Jenkins</span>
+              <span className="skill-note-tag">Terraform</span>
+              <span className="skill-note-tag">Postman</span>
+            </div>
+          </div>
+
         </div>
       </section>
     </>

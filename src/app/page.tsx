@@ -8,8 +8,7 @@ export default function Home() {
           <div className="hero-left">
             <p className="eyebrow">UC Berkeley &nbsp;·&nbsp; CS + Applied Math</p>
             <h1 className="hero-name" style={{ fontFamily: "var(--font-fredoka), sans-serif" }}>
-              <span className="hero-name-crystal">Crystal</span>
-              <span className="hero-name-cheng">Cheng</span>
+              Crystal Cheng
             </h1>
             <p className="hero-desc">
               Software engineer intern. I&apos;ve shipped Next.js features, AWS
@@ -48,37 +47,31 @@ export default function Home() {
 
               <div className="mb-tape mb-tape--top" />
 
-              {/* yellow sticky — bear instead of star */}
+              {/* yellow sticky */}
               <div className="mb-sticky mb-sticky--yellow">
                 <span className="mb-sticky-label">who</span>
                 <p className="mb-sticky-text">
                   cs + math<br />@ berkeley
-                  {/* teddy bear doodle */}
                   <svg
                     viewBox="0 0 28 28"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                     style={{ display: "inline-block", width: 22, height: 22, verticalAlign: "middle", marginLeft: 4 }}
                   >
-                    {/* ears */}
                     <circle cx="7" cy="7" r="4" fill="#C8A882" />
                     <circle cx="21" cy="7" r="4" fill="#C8A882" />
                     <circle cx="7" cy="7" r="2" fill="#B8967A" />
                     <circle cx="21" cy="7" r="2" fill="#B8967A" />
-                    {/* head */}
                     <circle cx="14" cy="14" r="8" fill="#C8A882" />
-                    {/* snout */}
                     <ellipse cx="14" cy="16.5" rx="3.5" ry="2.5" fill="#B8967A" />
-                    {/* eyes */}
                     <circle cx="11" cy="12.5" r="1.2" fill="#5C3D26" />
                     <circle cx="17" cy="12.5" r="1.2" fill="#5C3D26" />
-                    {/* nose */}
                     <ellipse cx="14" cy="15.8" rx="1.2" ry="0.8" fill="#5C3D26" />
                   </svg>
                 </p>
               </div>
 
-              {/* polaroid — square screen */}
+              {/* polaroid */}
               <div className="mb-polaroid">
                 <div className="mb-polaroid-screen">
                   <span className="mb-code-line"><em>const</em> stack = [</span>
@@ -309,55 +302,66 @@ export default function Home() {
           <span className="section-aside">my toolkit 🗂</span>
         </div>
 
-        <div className="skills-notes">
+        <div className="skills-board">
+          <div className="skills-board-tape skills-board-tape--tl" />
+          <div className="skills-board-tape skills-board-tape--tr" />
 
-          <div className="skill-note skill-note--yellow skill-group">
-            <span className="skill-note-label">what i write in</span>
-            <div className="skill-note-title">Languages</div>
-            <div className="skill-note-tags">
-              <span className="skill-note-tag">Python</span>
-              <span className="skill-note-tag">C/C++</span>
-              <span className="skill-note-tag">JavaScript</span>
-              <span className="skill-note-tag">SQL</span>
-              <span className="skill-note-tag">Bash</span>
-              <span className="skill-note-tag">HTML/CSS</span>
-              <span className="skill-note-tag">Tailwind</span>
-              <span className="skill-note-tag">MATLAB</span>
+          <div className="skills-columns">
+
+            <div className="skill-col skill-group">
+              <div className="skill-col-header">
+                <span className="skill-col-label">what i write in</span>
+                <div className="skill-col-title">Languages</div>
+              </div>
+              <div className="skill-cards-wrap">
+                <span className="skill-hang-tag">Python</span>
+                <span className="skill-hang-tag">C/C++</span>
+                <span className="skill-hang-tag">JavaScript</span>
+                <span className="skill-hang-tag">SQL</span>
+                <span className="skill-hang-tag">Bash</span>
+                <span className="skill-hang-tag">HTML/CSS</span>
+                <span className="skill-hang-tag">Tailwind</span>
+                <span className="skill-hang-tag">MATLAB</span>
+              </div>
             </div>
-          </div>
 
-          <div className="skill-note skill-note--pink skill-group">
-            <span className="skill-note-label">what i build with</span>
-            <div className="skill-note-title">ML & Frameworks</div>
-            <div className="skill-note-tags">
-              <span className="skill-note-tag">PyTorch</span>
-              <span className="skill-note-tag">Sklearn</span>
-              <span className="skill-note-tag">NumPy</span>
-              <span className="skill-note-tag">Pandas</span>
-              <span className="skill-note-tag">React</span>
-              <span className="skill-note-tag">Next.js</span>
-              <span className="skill-note-tag">Bootstrap</span>
-              <span className="skill-note-tag">REST APIs</span>
+            <div className="skill-col skill-group">
+              <div className="skill-col-header">
+                <span className="skill-col-label">what i build with</span>
+                <div className="skill-col-title">ML &amp; Frameworks</div>
+              </div>
+              <div className="skill-cards-wrap">
+                <span className="skill-hang-tag">PyTorch</span>
+                <span className="skill-hang-tag">Sklearn</span>
+                <span className="skill-hang-tag">NumPy</span>
+                <span className="skill-hang-tag">Pandas</span>
+                <span className="skill-hang-tag">React</span>
+                <span className="skill-hang-tag">Next.js</span>
+                <span className="skill-hang-tag">Bootstrap</span>
+                <span className="skill-hang-tag">REST APIs</span>
+              </div>
             </div>
-          </div>
 
-          <div className="skill-note skill-note--blue skill-group">
-            <span className="skill-note-label">where it runs</span>
-            <div className="skill-note-title">Cloud & DevOps</div>
-            <div className="skill-note-tags">
-              <span className="skill-note-tag">AWS S3</span>
-              <span className="skill-note-tag">CloudFront</span>
-              <span className="skill-note-tag">DynamoDB</span>
-              <span className="skill-note-tag">Lambda</span>
-              <span className="skill-note-tag">Git</span>
-              <span className="skill-note-tag">Linux</span>
-              <span className="skill-note-tag">Docker</span>
-              <span className="skill-note-tag">Jenkins</span>
-              <span className="skill-note-tag">Terraform</span>
-              <span className="skill-note-tag">Postman</span>
+            <div className="skill-col skill-group">
+              <div className="skill-col-header">
+                <span className="skill-col-label">where it runs</span>
+                <div className="skill-col-title">Cloud &amp; DevOps</div>
+              </div>
+              <div className="skill-cards-wrap">
+                <span className="skill-hang-tag">AWS S3</span>
+                <span className="skill-hang-tag">CloudFront</span>
+                <span className="skill-hang-tag">DynamoDB</span>
+                <span className="skill-hang-tag">Lambda</span>
+                <span className="skill-hang-tag">Git</span>
+                <span className="skill-hang-tag">Linux</span>
+                <span className="skill-hang-tag">Docker</span>
+                <span className="skill-hang-tag">Jenkins</span>
+                <span className="skill-hang-tag">Terraform</span>
+                <span className="skill-hang-tag">Postman</span>
+              </div>
             </div>
-          </div>
 
+          </div>
         </div>
       </section>
     </>

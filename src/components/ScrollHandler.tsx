@@ -7,7 +7,9 @@ export default function ScrollHandler() {
   const pathname = usePathname();
 
   useEffect(() => {
-    const targets = document.querySelectorAll(".section, .exp-row, .proj-card");
+    const targets = document.querySelectorAll(
+      ".section, .exp-row, .proj-card, .skill-group"
+    );
 
     const prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)",

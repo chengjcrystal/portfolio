@@ -1,113 +1,9 @@
+import Hero from "@/components/Hero";
+
 export default function Home() {
   return (
     <>
-      {/* hero */}
-      <div className="hero">
-        <div className="hero-inner">
-
-          <div className="hero-left">
-            <p className="eyebrow">UC Berkeley &nbsp;·&nbsp; CS + Applied Math</p>
-            <h1 className="hero-name" style={{ fontFamily: "var(--font-fredoka), sans-serif" }}>
-              <span className="hero-name-animated">
-                {"Crystal Cheng".split("").map((ch, i) =>
-                  ch === " "
-                    ? <span key={i} style={{ display: "inline-block", width: "0.3em" }} />
-                    : <span key={i} className="hero-name-letter">{ch}</span>
-                )}
-              </span>
-            </h1>
-            <p className="hero-desc">
-              Software engineer intern. I&apos;ve shipped Next.js features, AWS
-              backends, and ML pipelines for mentor matching and lecture Q&amp;A.
-            </p>
-            <div className="btn-row">
-              <a
-                className="btn btn-solid"
-                href="/assets/crystal-resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="ti ti-file-text" /> Resume
-              </a>
-              <a
-                className="btn btn-solid"
-                href="https://linkedin.com/in/chengjcrystal"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="ti ti-brand-linkedin" /> LinkedIn
-              </a>
-              <a
-                className="btn btn-solid"
-                href="https://github.com/chengjcrystal"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="ti ti-brand-github" /> GitHub
-              </a>
-            </div>
-          </div>
-
-          <div className="hero-right">
-            <div className="moodboard">
-
-              <div className="mb-tape mb-tape--top" />
-
-              {/* yellow sticky */}
-              <div className="mb-sticky mb-sticky--yellow">
-                <span className="mb-sticky-label">who</span>
-                <p className="mb-sticky-text">
-                  cs + math<br />@ berkeley
-                  <svg
-                    viewBox="0 0 28 28"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    style={{ display: "inline-block", width: 22, height: 22, verticalAlign: "middle", marginLeft: 4 }}
-                  >
-                    <circle cx="7" cy="7" r="4" fill="#C8A882" />
-                    <circle cx="21" cy="7" r="4" fill="#C8A882" />
-                    <circle cx="7" cy="7" r="2" fill="#B8967A" />
-                    <circle cx="21" cy="7" r="2" fill="#B8967A" />
-                    <circle cx="14" cy="14" r="8" fill="#C8A882" />
-                    <ellipse cx="14" cy="16.5" rx="3.5" ry="2.5" fill="#B8967A" />
-                    <circle cx="11" cy="12.5" r="1.2" fill="#5C3D26" />
-                    <circle cx="17" cy="12.5" r="1.2" fill="#5C3D26" />
-                    <ellipse cx="14" cy="15.8" rx="1.2" ry="0.8" fill="#5C3D26" />
-                  </svg>
-                </p>
-              </div>
-
-              {/* polaroid */}
-              <div className="mb-polaroid">
-                <div className="mb-polaroid-screen">
-                  <span className="mb-code-line"><em>const</em> stack = [</span>
-                  <span className="mb-code-line">&nbsp;&nbsp;<em className="mb-str">&quot;react&quot;</em>,</span>
-                  <span className="mb-code-line">&nbsp;&nbsp;<em className="mb-str">&quot;aws&quot;</em>,</span>
-                  <span className="mb-code-line">&nbsp;&nbsp;<em className="mb-str">&quot;pytorch&quot;</em>,</span>
-                  <span className="mb-code-line">]</span>
-                  <span className="mb-code-line" style={{ marginTop: "4px" }}>
-                    <em className="mb-comment">// fuel: french vanilla ☕</em>
-                  </span>
-                </div>
-                <p className="mb-polaroid-caption">my stack ♡</p>
-              </div>
-
-              {/* pink sticky */}
-              <div className="mb-sticky mb-sticky--pink">
-                <span className="mb-sticky-label">currently</span>
-                <p className="mb-sticky-text">interning @<br />hyve solutions</p>
-              </div>
-
-              <div className="mb-tape mb-tape--corner" />
-            </div>
-          </div>
-
-        </div>
-
-        <div className="hero-scroll-hint">
-          <i className="ti ti-arrow-down" />
-        </div>
-      </div>
+      <Hero />
 
       {/* experience */}
       <section className="section" id="experience">
@@ -301,7 +197,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* skills — corkboard */}
+      {/* skills */}
       <section className="section" id="skills">
         <div className="section-header">
           <h2 className="section-title">Skills</h2>

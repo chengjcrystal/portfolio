@@ -8,7 +8,13 @@ export default function Home() {
           <div className="hero-left">
             <p className="eyebrow">UC Berkeley &nbsp;·&nbsp; CS + Applied Math</p>
             <h1 className="hero-name" style={{ fontFamily: "var(--font-fredoka), sans-serif" }}>
-              Crystal Cheng
+              <span className="hero-name-animated">
+                {"Crystal Cheng".split("").map((ch, i) =>
+                  ch === " "
+                    ? <span key={i} style={{ display: "inline-block", width: "0.3em" }} />
+                    : <span key={i} className="hero-name-letter">{ch}</span>
+                )}
+              </span>
             </h1>
             <p className="hero-desc">
               Software engineer intern. I&apos;ve shipped Next.js features, AWS

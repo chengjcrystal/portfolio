@@ -9,7 +9,7 @@ export default function Home() {
       <section className="section" id="experience">
         <div className="section-header">
           <h2 className="section-title">Experience</h2>
-          <span className="section-aside">the journey so far ✦</span>
+          <span className="section-aside">ᯓ ✈︎ my journey so far</span>
         </div>
 
         <div className="exp-list">
@@ -24,11 +24,16 @@ export default function Home() {
                 <span className="exp-role">Software Engineer Intern</span>
               </div>
               <p className="exp-desc">
-                Software Engineer Team in Manufacturing &amp; Integration.
+              Implementing an LLM-powered document processing platform in Python 
+              that combines prompt engineering, RAG, REST APIs, and automated output 
+              validation to automate technical document analysis for AI infrastructure 
+              validation and integration testing.
               </p>
               <div className="chip-row">
-                <span className="chip">Software Engineering</span>
-                <span className="chip">Manufacturing</span>
+                <span className="chip">Flask</span>
+                <span className="chip">Bootstrap</span>
+                <span className="chip">Retrieval-Augmented Generation</span>
+                <span className="chip">Python</span>
               </div>
             </div>
           </div>
@@ -141,7 +146,7 @@ export default function Home() {
       <section className="section" id="projects">
         <div className="section-header">
           <h2 className="section-title">Projects</h2>
-          <span className="section-aside">stuff i actually built 🛠</span>
+          <span className="section-aside">-ˋˏ✄ stuff i built</span>
         </div>
 
         <div className="proj-grid">
@@ -164,10 +169,10 @@ export default function Home() {
                 numeric signals (65%/25%/10%) using DeepFace and OpenCV with dynamic reweighting for missing inputs.
               </p>
               <div className="chip-row">
-                <span className="chip">PyTorch</span>
-                <span className="chip">Whisper</span>
-                <span className="chip">LangChain</span>
-                <span className="chip">FastAPI</span>
+                <span className="chip">Hugging Face Transformers</span>
+                <span className="chip">BART-MNLI</span>
+                <span className="chip">DeepFace</span>
+                <span className="chip">OpenCV</span>
               </div>
             </div>
           </div>
@@ -188,9 +193,9 @@ export default function Home() {
                 AWS cloud-hosted services.
               </p>
               <div className="chip-row">
-                <span className="chip">MongoDB</span>
-                <span className="chip">Express</span>
-                <span className="chip">Node.js</span>
+                <span className="chip">React</span>
+                <span className="chip">REST APIs</span>
+                <span className="chip">AWS</span>
                 <span className="chip">JavaScript</span>
               </div>
             </div>
@@ -203,7 +208,7 @@ export default function Home() {
       <section className="section" id="skills">
         <div className="section-header">
           <h2 className="section-title">Skills</h2>
-          <span className="section-aside">my toolkit 🗂</span>
+          <span className="section-aside">🗂 my toolkit</span>
         </div>
 
         <div className="skills-board">

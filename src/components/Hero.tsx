@@ -131,8 +131,8 @@ export default function Hero() {
           </h1>
 
           <p className="hero-desc">
-            Software engineer intern. I&apos;ve shipped Next.js features, AWS
-            backends, and ML pipelines for mentor matching and lecture Q&amp;A.
+          Software Engineer Intern at Hyve Solutions, building AI-enabled 
+          workflow solutions while sipping a cup of french vanilla ⋆.˚☕︎
           </p>
 
           <div className="btn-row">

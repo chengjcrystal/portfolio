@@ -44,7 +44,7 @@ export default function Footer() {
 
       {/* right: updated note + little made-with line */}
       <div className="footer-right">
-        <p className="footer-note">last updated june 2026 ✦</p>
+        <p className="footer-note">last updated june 2026 ᨳଓ</p>
         <p className="footer-made">made with next.js + lots of french vanilla ☕</p>
       </div>
     </footer>

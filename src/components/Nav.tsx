@@ -11,12 +11,9 @@ export default function Nav() {
         <li><a href="/#projects">Projects</a></li>
         <li><a href="/#skills">Skills</a></li>
         <li>
-          <a
-            href="mailto:cjcheng@berkeley.edu"
-            className="nav-contact"
-          >
+          <Link href="/contact" className="nav-contact">
             Contact
-          </a>
+          </Link>
         </li>
       </ul>
     </nav>

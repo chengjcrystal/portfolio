@@ -151,17 +151,17 @@ export default function Home() {
             <div className="proj-card-inner">
               <div className="proj-card-top">
                 <div className="proj-name">
-                  Multimodal Lecture Summarizer with Retrieval-Augmented Q&amp;A
+                  MBTI Guesser
                 </div>
-                <a href="https://github.com/chengjcrystal" target="_blank" rel="noopener noreferrer" aria-label="View project">
+                <a href="https://huggingface.co/spaces/chengjcrystal/mbti-guesser" target="_blank" rel="noopener noreferrer" aria-label="View project">
                   <i className="ti ti-arrow-up-right proj-link" />
                 </a>
               </div>
               <p className="proj-sub">
-                Lecture Q&amp;A in Python: Whisper for transcription,
-                sentence-transformers over FAISS for retrieval, FastAPI for the
-                API. Evaluated on 20 held-out questions with ROUGE-L — 300-token
-                chunks beat 100-token by 14% ROUGE.
+                Developed a free-form MBTI classifier using BART-MNLI zero-shot inference, 
+                replacing traditional surveys with a 13-feature multimodal pipeline. Mitigated short-input ENTJ bias by 
+                redesigning NLI templates and adding confidence thresholds. Fused text, image, and 
+                numeric signals (65%/25%/10%) using DeepFace and OpenCV with dynamic reweighting for missing inputs.
               </p>
               <div className="chip-row">
                 <span className="chip">PyTorch</span>
@@ -176,14 +176,16 @@ export default function Home() {
             <div className="proj-tape" />
             <div className="proj-card-inner">
               <div className="proj-card-top">
-                <div className="proj-name">Opal Mentorship App</div>
+                <div className="proj-name">GreenWays</div>
                 <a href="https://github.com/chengjcrystal" target="_blank" rel="noopener noreferrer" aria-label="View project">
                   <i className="ti ti-arrow-up-right proj-link" />
                 </a>
               </div>
               <p className="proj-sub">
-                Mentor-mentee matching with tunable scoring weights and an AWS
-                Lambda evaluation pipeline across four behavioral dimensions.
+                Built a full-stack web application during a 24-hour hackathon, processing INRIX Traffic API data across 500+ 
+                roadway segments to identify congestion-driven emission hotspots. Engineered interactive geospatial visualizations 
+                displaying 10,000+ real-time traffic data points with filtering and analytics capabilities, fully deployed on 
+                AWS cloud-hosted services.
               </p>
               <div className="chip-row">
                 <span className="chip">MongoDB</span>

@@ -132,7 +132,7 @@ export default function Hero() {
 
           <p className="hero-desc">
           Software Engineer Intern at Hyve Solutions, building AI-enabled 
-          workflow solutions while sipping a cup of french vanilla ⋆.˚☕︎
+          workflow solutions while sipping a cup of vanilla espresso ⋆.˚☕︎
           </p>
 
           <div className="btn-row">
@@ -200,7 +200,7 @@ export default function Hero() {
                 <span className="mb-code-line">&nbsp;&nbsp;<em className="mb-str">&quot;pytorch&quot;</em>,</span>
                 <span className="mb-code-line">]</span>
                 <span className="mb-code-line" style={{ marginTop: "4px" }}>
-                  <em className="mb-comment">// fuel: french vanilla</em>
+                  <em className="mb-comment">// fuel: vanilla espresso</em>
                 </span>
               </div>
               <p className="mb-polaroid-caption">my stack ♡</p>

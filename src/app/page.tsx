@@ -45,7 +45,7 @@ export default function Home() {
             <div>
               <div className="exp-top">
                 <span className="exp-company">Newrium Foundation</span>
-                <span className="exp-role">Software Engineer Intern</span>
+                <span className="exp-role">Software Engineer</span>
               </div>
               <p className="exp-desc">
                 Owned development of customer-facing support and FAQ workflows,

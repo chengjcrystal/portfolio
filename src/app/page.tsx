@@ -150,8 +150,32 @@ export default function Home() {
         </div>
 
         <div className="proj-grid">
-
+        
           <div className="proj-card proj-card--tilt-left">
+            <div className="proj-tape" />
+            <div className="proj-card-inner">
+              <div className="proj-card-top">
+                <div className="proj-name">FreshCheck</div>
+                <a href="https://freshcheckfruit.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="View project">
+                  <i className="ti ti-arrow-up-right proj-link" />
+                </a>
+              </div>
+              <p className="proj-sub">
+              Deployed a real-time fruit-freshness classifier as an always-up, zero-backend static React app on Vercel, 
+              running sub-10ms inference fully in-browser via onnxruntime-web (WebAssembly) to keep all images on-device.
+              Built a compact 24K-parameter CNN in PyTorch 99.9% smaller than ResNet-50 (115 KB), hitting 100% val / 99.5% 
+              train accuracy on a 510-image dataset, exported to ONNX with verified less than 0.5% parity.
+              </p>
+              <div className="chip-row">
+                <span className="chip">React</span>
+                <span className="chip">REST APIs</span>
+                <span className="chip">AWS</span>
+                <span className="chip">JavaScript</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="proj-card proj-card--tilt-right">
             <div className="proj-tape" />
             <div className="proj-card-inner">
               <div className="proj-card-top">
@@ -177,7 +201,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="proj-card proj-card--tilt-right">
+          <div className="proj-card proj-card--tilt-left">
             <div className="proj-tape" />
             <div className="proj-card-inner">
               <div className="proj-card-top">
@@ -244,6 +268,9 @@ export default function Home() {
                 <span className="skill-hang-tag">Sklearn</span>
                 <span className="skill-hang-tag">NumPy</span>
                 <span className="skill-hang-tag">Pandas</span>
+                <span className="skill-hang-tag">ONNX</span>
+                <span className="skill-hang-tag">HuggingFace Transformers</span>
+                <span className="skill-hang-tag">OpenCV</span>
                 <span className="skill-hang-tag">React</span>
                 <span className="skill-hang-tag">Next.js</span>
                 <span className="skill-hang-tag">Bootstrap</span>

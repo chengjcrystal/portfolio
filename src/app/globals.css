@@ -36,6 +36,24 @@ a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; }
 
 
+/* custom coffee-cup cursor — same cup everywhere, on real pointer devices */
+
+@media (hover: hover) and (pointer: fine) {
+  html,
+  *,
+  *::before,
+  *::after {
+    cursor: url("/cursor-coffee.png") 7 12, auto !important;
+  }
+
+  /* sparkles when hovering the hero name */
+  .hero-name,
+  .hero-name * {
+    cursor: url("/cursor-sparkle.png") 10 12, auto !important;
+  }
+}
+
+
 /* nav */
 
 nav {

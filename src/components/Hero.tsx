@@ -200,7 +200,7 @@ export default function Hero() {
                 <span className="mb-code-line">&nbsp;&nbsp;<em className="mb-str">&quot;pytorch&quot;</em>,</span>
                 <span className="mb-code-line">]</span>
                 <span className="mb-code-line" style={{ marginTop: "4px" }}>
-                  <em className="mb-comment">// fuel: vanilla espresso</em>
+                  <em className="mb-comment">// fuel: light caffeine</em>
                 </span>
               </div>
               <p className="mb-polaroid-caption">my stack ♡</p>

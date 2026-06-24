@@ -167,10 +167,10 @@ export default function Home() {
               train accuracy on a 510-image dataset, exported to ONNX with verified less than 0.5% parity.
               </p>
               <div className="chip-row">
+                <span className="chip">PyTorch</span>
+                <span className="chip">ONNX</span>
                 <span className="chip">React</span>
-                <span className="chip">REST APIs</span>
-                <span className="chip">AWS</span>
-                <span className="chip">JavaScript</span>
+                <span className="chip">Vercel</span>
               </div>
             </div>
           </div>
@@ -243,23 +243,6 @@ export default function Home() {
 
             <div className="skill-col skill-group">
               <div className="skill-col-header">
-                <span className="skill-col-label">what i write in</span>
-                <div className="skill-col-title">Languages</div>
-              </div>
-              <div className="skill-cards-wrap">
-                <span className="skill-hang-tag">Python</span>
-                <span className="skill-hang-tag">C/C++</span>
-                <span className="skill-hang-tag">JavaScript</span>
-                <span className="skill-hang-tag">SQL</span>
-                <span className="skill-hang-tag">Bash</span>
-                <span className="skill-hang-tag">HTML/CSS</span>
-                <span className="skill-hang-tag">Tailwind</span>
-                <span className="skill-hang-tag">MATLAB</span>
-              </div>
-            </div>
-
-            <div className="skill-col skill-group">
-              <div className="skill-col-header">
                 <span className="skill-col-label">what i build with</span>
                 <div className="skill-col-title">ML &amp; Frameworks</div>
               </div>
@@ -294,6 +277,23 @@ export default function Home() {
                 <span className="skill-hang-tag">Jenkins</span>
                 <span className="skill-hang-tag">Terraform</span>
                 <span className="skill-hang-tag">Postman</span>
+              </div>
+            </div>
+
+            <div className="skill-col skill-group">
+              <div className="skill-col-header">
+                <span className="skill-col-label">what i write in</span>
+                <div className="skill-col-title">Languages</div>
+              </div>
+              <div className="skill-cards-wrap">
+                <span className="skill-hang-tag">Python</span>
+                <span className="skill-hang-tag">C/C++</span>
+                <span className="skill-hang-tag">JavaScript</span>
+                <span className="skill-hang-tag">SQL</span>
+                <span className="skill-hang-tag">Bash</span>
+                <span className="skill-hang-tag">HTML/CSS</span>
+                <span className="skill-hang-tag">Tailwind</span>
+                <span className="skill-hang-tag">MATLAB</span>
               </div>
             </div>
 

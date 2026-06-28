@@ -7,9 +7,9 @@ export default function Nav() {
         Crystal Cheng
       </Link>
       <ul className="nav-links">
-        <li><a href="/#experience">Experience</a></li>
-        <li><a href="/#projects">Projects</a></li>
-        <li><a href="/#skills">Skills</a></li>
+        <li className="nav-section-link"><Link href="/#experience">Experience</Link></li>
+        <li className="nav-section-link"><Link href="/#projects">Projects</Link></li>
+        <li className="nav-section-link"><Link href="/#skills">Skills</Link></li>
         <li>
           <Link href="/contact" className="nav-contact">
             Contact

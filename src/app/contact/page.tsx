@@ -35,24 +35,24 @@ export default function ContactPage() {
         <div className="contact-stamp">
           open to
           <br />
-          offers
+          work
         </div>
 
-        <p className="eyebrow">Reach me in any way!</p>
+        <p className="eyebrow">I&rsquo;d love to hear from you</p>
 
         <h1 className="contact-title">
-          Let&apos;s
-          <br />
-          <span className="contact-title-accent">talk.</span>
+          Let&apos;s <span className="contact-title-accent">talk.</span>
         </h1>
 
         <p className="contact-sub">
-          Looking for an AI Analyst who cares about privacy and data ethics?
-          I'm ready to help scale Machine Learning systems that make a daily impact
-          without compromising user trust.
+          I&rsquo;m finishing my CS and Applied Math degree at Berkeley this December and looking
+          for a full-time software or machine learning role starting January 2027. If your team is
+          building AI thoughtfully, with real care for privacy and data ethics, I&rsquo;d love to
+          talk.
         </p>
         <p className="contact-sub">
-          Always open to connecting or chatting!
+          Email is the quickest way to reach me, but any of these work. I read every message and
+          always write back.
         </p>
 
         <div className="contact-links">

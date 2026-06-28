@@ -30,7 +30,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Crystal Cheng · Software Engineer",
+  title: "Crystal Cheng Portfolio",
   description: "CS + Applied Math at UC Berkeley. Full-stack, AWS, and ML work.",
 };
 

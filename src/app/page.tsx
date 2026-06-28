@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Hero from "@/components/Hero";
 
 export default function Home() {
@@ -127,7 +128,7 @@ export default function Home() {
               </div>
               <p className="exp-desc">
                 Redesigned the haptic feedback research lab website in Figma and
-                rebuilt it with React, HTML, and CSS — responsive across desktop,
+                rebuilt it with React, HTML, and CSS, responsive across desktop,
                 tablet, and mobile. Refactored the homepage into reusable
                 components, cutting redundant render logic across 3 page sections.
               </p>
@@ -151,20 +152,33 @@ export default function Home() {
 
         <div className="proj-grid">
         
-          <div className="proj-card proj-card--tilt-left">
+          <a
+            className="proj-card proj-card--preview proj-card--tilt-left"
+            href="https://freshcheckfruit.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View FreshCheck live"
+          >
+            <div className="proj-preview">
+              <Image
+                className="proj-preview-img"
+                src="/previews/freshcheck.png"
+                alt="FreshCheck app interface"
+                fill
+                sizes="(max-width: 768px) 100vw, 520px"
+              />
+              <span className="proj-preview-badge">View live <i className="ti ti-arrow-up-right" /></span>
+            </div>
             <div className="proj-tape" />
             <div className="proj-card-inner">
               <div className="proj-card-top">
                 <div className="proj-name">FreshCheck</div>
-                <a href="https://freshcheckfruit.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="View project">
-                  <i className="ti ti-arrow-up-right proj-link" />
-                </a>
+                <i className="ti ti-arrow-up-right proj-link" />
               </div>
               <p className="proj-sub">
-              Deployed a real-time fruit-freshness classifier as an always-up, zero-backend static React app on Vercel, 
-              running sub-10ms inference fully in-browser via onnxruntime-web (WebAssembly) to keep all images on-device.
-              Built a compact 24K-parameter CNN in PyTorch 99.9% smaller than ResNet-50 (115 KB), hitting 100% val / 99.5% 
-              train accuracy on a 510-image dataset, exported to ONNX with verified less than 0.5% parity.
+                An in-browser fruit-freshness classifier. A tiny 24K-parameter CNN runs sub-10ms
+                inference on-device with ONNX and WebAssembly, so photos never leave your phone,
+                hitting 100% validation accuracy at just 115 KB.
               </p>
               <div className="chip-row">
                 <span className="chip">PyTorch</span>
@@ -173,24 +187,35 @@ export default function Home() {
                 <span className="chip">Vercel</span>
               </div>
             </div>
-          </div>
+          </a>
 
-          <div className="proj-card proj-card--tilt-right">
+          <a
+            className="proj-card proj-card--preview proj-card--tilt-right"
+            href="https://huggingface.co/spaces/chengjcrystal/mbti-guesser"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View MBTI Guesser live"
+          >
+            <div className="proj-preview">
+              <Image
+                className="proj-preview-img"
+                src="/previews/mbti.png"
+                alt="MBTI Guesser app interface"
+                fill
+                sizes="(max-width: 768px) 100vw, 520px"
+              />
+              <span className="proj-preview-badge">View live <i className="ti ti-arrow-up-right" /></span>
+            </div>
             <div className="proj-tape" />
             <div className="proj-card-inner">
               <div className="proj-card-top">
-                <div className="proj-name">
-                  MBTI Guesser
-                </div>
-                <a href="https://huggingface.co/spaces/chengjcrystal/mbti-guesser" target="_blank" rel="noopener noreferrer" aria-label="View project">
-                  <i className="ti ti-arrow-up-right proj-link" />
-                </a>
+                <div className="proj-name">MBTI Guesser</div>
+                <i className="ti ti-arrow-up-right proj-link" />
               </div>
               <p className="proj-sub">
-                Developed a free-form MBTI classifier using BART-MNLI zero-shot inference, 
-                replacing traditional surveys with a 13-feature multimodal pipeline. Mitigated short-input ENTJ bias by 
-                redesigning NLI templates and adding confidence thresholds. Fused text, image, and 
-                numeric signals (65%/25%/10%) using DeepFace and OpenCV with dynamic reweighting for missing inputs.
+                A free-form MBTI classifier built on BART-MNLI zero-shot inference instead of a fixed
+                survey. It fuses text, image, and numeric signals with DeepFace and OpenCV, reweighting
+                on the fly when some inputs are missing.
               </p>
               <div className="chip-row">
                 <span className="chip">Hugging Face Transformers</span>
@@ -199,31 +224,38 @@ export default function Home() {
                 <span className="chip">OpenCV</span>
               </div>
             </div>
-          </div>
+          </a>
 
-          <div className="proj-card proj-card--tilt-left">
+          <a
+            className="proj-card proj-card--solo proj-card--tilt-left"
+            href="https://github.com/chengjcrystal/reporank"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="View RepoRank on GitHub"
+          >
             <div className="proj-tape" />
             <div className="proj-card-inner">
               <div className="proj-card-top">
-                <div className="proj-name">GreenWays</div>
-                <a href="https://github.com/chengjcrystal" target="_blank" rel="noopener noreferrer" aria-label="View project">
-                  <i className="ti ti-arrow-up-right proj-link" />
-                </a>
+                <div className="proj-name">
+                  RepoRank
+                  <span className="proj-status">in progress</span>
+                </div>
+                <i className="ti ti-arrow-up-right proj-link" />
               </div>
               <p className="proj-sub">
-                Built a full-stack web application during a 24-hour hackathon, processing INRIX Traffic API data across 500+ 
-                roadway segments to identify congestion-driven emission hotspots. Engineered interactive geospatial visualizations 
-                displaying 10,000+ real-time traffic data points with filtering and analytics capabilities, fully deployed on 
-                AWS cloud-hosted services.
+                Currently building a GitHub repository search engine that ranks results with a BM25 scoring
+                algorithm written from scratch instead of pulling in a library. The FastAPI backend tokenizes
+                each query, builds an inverted index, and scores repositories with TF-IDF so the closest
+                matches come back first, all served through a typed REST API.
               </p>
               <div className="chip-row">
-                <span className="chip">React</span>
-                <span className="chip">REST APIs</span>
-                <span className="chip">AWS</span>
-                <span className="chip">JavaScript</span>
+                <span className="chip">FastAPI</span>
+                <span className="chip">Python</span>
+                <span className="chip">BM25</span>
+                <span className="chip">Information Retrieval</span>
               </div>
             </div>
-          </div>
+          </a>
 
         </div>
       </section>

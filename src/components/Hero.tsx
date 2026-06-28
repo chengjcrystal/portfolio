@@ -1,13 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Fragment, useEffect, useRef } from "react";
-
-// fly-in animation config for hero visual pieces (index order = ref order below)
-const HV_ITEMS = [
-  { key: "tape",     from: { x: 0,    y: -420 }, delay: 0   },
-  { key: "polaroid", from: { x: 480,  y: -260 }, delay: 140 },
-];
+import { Fragment, useRef } from "react";
 
 const NAME = "Crystal Cheng";
 
@@ -44,34 +38,8 @@ const PERSONALITIES = [
 const FALLOFF = [1, 0.6, 0.3];
 
 export default function Hero() {
-  const hvRefs  = useRef<(HTMLDivElement | null)[]>([]);
   const letRefs = useRef<(HTMLSpanElement | null)[]>([]);
   const timers  = useRef<Map<number, ReturnType<typeof setTimeout>>>(new Map());
-
-  // hero visual fly-in on mount
-  useEffect(() => {
-    const els = hvRefs.current;
-
-    els.forEach((el, i) => {
-      if (!el) return;
-      el.style.transition = "none";
-      el.style.transform  = `translate(${HV_ITEMS[i].from.x}px, ${HV_ITEMS[i].from.y}px)`;
-      el.style.opacity    = "0";
-    });
-
-    const ts: ReturnType<typeof setTimeout>[] = [];
-    els.forEach((el, i) => {
-      const t = setTimeout(() => {
-        if (!el) return;
-        el.style.transition = `transform 1.1s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.6s ease`;
-        el.style.transform  = "";
-        el.style.opacity    = "1";
-      }, HV_ITEMS[i].delay);
-      ts.push(t);
-    });
-
-    return () => ts.forEach(clearTimeout);
-  }, []);
 
   // animate one letter at a given intensity + delay
   const animateLetter = (idx: number, scale: number, delay: number) => {
@@ -147,8 +115,9 @@ export default function Hero() {
           </h1>
 
           <p className="hero-desc">
-          I'm a Software Engineer Intern at Hyve Solutions, building AI-enabled
-          workflow solutions while sipping a{" "}
+          I'm a Software Engineer Intern at Hyve Solutions, building{" "}
+          <span className="hero-desc-nowrap">AI-enabled</span> workflow solutions
+          while sipping a{" "}
           <span className="hero-desc-nowrap">cup of vanilla espresso&nbsp;⋆.˚☕︎</span>
           </p>
 
@@ -184,9 +153,9 @@ export default function Hero() {
         <div className="hero-right">
           <div className="hero-visual">
 
-            <div ref={el => { hvRefs.current[0] = el; }} className="hero-tape" />
+            <div className="hero-tape" />
 
-            <div ref={el => { hvRefs.current[1] = el; }} className="polaroid-lg">
+            <div className="polaroid-lg">
               <Image
                 className="polaroid-lg-photo"
                 src="/sfsmile.jpg"
@@ -196,7 +165,7 @@ export default function Hero() {
                 priority
                 unoptimized
               />
-              <p className="polaroid-lg-caption">grad dec &rsquo;26 · open jan &rsquo;27 ⋆˚</p>
+              <p className="polaroid-lg-caption">grad dec &rsquo;26 · open to work jan &rsquo;27</p>
             </div>
 
           </div>

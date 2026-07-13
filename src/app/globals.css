@@ -452,8 +452,8 @@ nav {
   padding: clamp(1.9rem, 2.6vw, 2.35rem) clamp(1.7rem, 2.4vw, 2.1rem);
   background-color: #FFFFFF;
   background-image: radial-gradient(
-    rgba(92, 61, 38, 0.05) 1px,
-    transparent 1.5px
+    rgba(92, 61, 38, 0.15) 1.2px,
+    transparent 1.7px
   );
   background-size: 23px 23px;
   background-position: 16px 22px;

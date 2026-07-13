@@ -1,12 +1,5 @@
 <p align="center">
-  <img src=".github/assets/banner.png" alt="Crystal Cheng, cream-portfolio" width="820">
-</p>
-
-<p align="center">
-  <a href="https://chengjcrystal.vercel.app"><img src="https://img.shields.io/badge/live_site-chengjcrystal.vercel.app-C65C86?style=flat-square&labelColor=5C3D26" alt="live site"></a>
-  <img src="https://img.shields.io/badge/Next.js-16-D79A2C?style=flat-square&logo=nextdotjs&logoColor=white&labelColor=5C3D26" alt="Next.js 16">
-  <img src="https://img.shields.io/badge/TypeScript-5-8A6448?style=flat-square&logo=typescript&logoColor=white&labelColor=5C3D26" alt="TypeScript 5">
-  <img src="https://img.shields.io/badge/React-19-7A6047?style=flat-square&logo=react&logoColor=white&labelColor=5C3D26" alt="React 19">
+  <img src=".github/assets/readme-banner.png" alt="Crystal Cheng, cream-portfolio" width="820">
 </p>
 
 # ⋆˚✩ cream-portfolio ✩˚⋆

@@ -1,10 +1,145 @@
 import Image from "next/image";
 import Hero from "@/components/Hero";
+import FreshCheckCard from "@/components/FreshCheckCard";
+
+// Skills as a stack of category rows, each a grid of logo tiles. `icon` is a
+// devicon font class for real brand marks; a few tools have no brand logo, so
+// they fall back to a single-tone Tabler glyph (fallback) or an emoji.
+const SKILL_GROUPS = [
+  {
+    label: "what i build with",
+    title: "ML & Frameworks",
+    items: [
+      { name: "PyTorch", icon: "devicon-pytorch-original colored" },
+      { name: "Sklearn", icon: "devicon-scikitlearn-plain colored" },
+      { name: "NumPy", icon: "devicon-numpy-plain colored" },
+      { name: "Pandas", icon: "devicon-pandas-plain colored" },
+      { name: "ONNX", icon: "ti ti-affiliate", fallback: true },
+      { name: "HuggingFace", icon: "🤗", emoji: true },
+      { name: "OpenCV", icon: "devicon-opencv-plain colored" },
+      { name: "React", icon: "devicon-react-original colored" },
+      { name: "Next.js", icon: "devicon-nextjs-plain colored" },
+      { name: "Bootstrap", icon: "devicon-bootstrap-plain colored" },
+      { name: "Tailwind", icon: "devicon-tailwindcss-original colored" },
+      { name: "REST APIs", icon: "ti ti-api", fallback: true },
+    ],
+  },
+  {
+    label: "where it runs",
+    title: "Cloud & DevOps",
+    items: [
+      { name: "AWS S3", icon: "ti ti-bucket", fallback: true },
+      { name: "CloudFront", icon: "ti ti-world", fallback: true },
+      { name: "DynamoDB", icon: "devicon-dynamodb-plain colored" },
+      { name: "Lambda", icon: "ti ti-lambda", fallback: true },
+      { name: "Git", icon: "devicon-git-plain colored" },
+      { name: "Linux", icon: "devicon-linux-plain colored" },
+      { name: "Docker", icon: "devicon-docker-plain colored" },
+      { name: "Jenkins", icon: "devicon-jenkins-plain colored" },
+      { name: "Terraform", icon: "devicon-terraform-plain colored" },
+      { name: "Postman", icon: "devicon-postman-plain colored" },
+    ],
+  },
+  {
+    label: "what i write in",
+    title: "Languages",
+    items: [
+      { name: "Python", icon: "devicon-python-plain colored" },
+      { name: "C/C++", icon: "devicon-cplusplus-plain colored" },
+      { name: "JavaScript", icon: "devicon-javascript-plain colored" },
+      { name: "SQL", icon: "ti ti-database", fallback: true },
+      { name: "Bash", icon: "devicon-bash-plain colored" },
+      { name: "HTML/CSS", icon: "devicon-html5-plain colored" },
+      { name: "MATLAB", icon: "devicon-matlab-plain colored" },
+    ],
+  },
+];
+
+const SOCIALS = [
+  { href: "https://linkedin.com/in/chengjcrystal", label: "LinkedIn" },
+  { href: "https://github.com/chengjcrystal", label: "GitHub" },
+  { href: "/assets/crystal-resume.pdf", label: "Resume" },
+];
 
 export default function Home() {
   return (
     <>
       <Hero />
+
+      {/* about + education */}
+      <section className="section" id="about">
+        <div className="section-header">
+          <h2 className="section-title">About</h2>
+          <span className="section-aside">♡ a little about me</span>
+        </div>
+
+        <div className="about-body">
+          <div className="about-bio">
+            <p>
+              Hi! I&rsquo;m Crystal{" "}<span className="sticker sticker--gold">✩₊˚</span>, a Computer
+              Science and Applied Math student at UC Berkeley, graduating December 2026.
+              After a self-driving car failure seriously injured someone close to me,
+              I&rsquo;ve cared about one thing above the rest: building technology people
+              can genuinely trust.
+            </p>
+            <p>
+              My favorite work happens with other people. Whether I&rsquo;m managing the
+              budget as <strong>Treasurer of Society of Women Engineers</strong>{" "}
+              <span className="sticker sticker--gear">⚙︎</span>{" "}or building a semester-long
+              leaderboard competition to keep our officers showing up and bonding,
+              I&rsquo;m usually
+              the one keeping a project moving so nobody feels stuck. I&rsquo;m curious, a
+              little stubborn about getting things right, and most myself when I&rsquo;m
+              making something.
+            </p>
+            <p>
+              Off the clock, you&rsquo;ll catch me{" "}
+              <strong>crocheting, journaling, on the tennis court, or in the dance
+              studio</strong>. I&rsquo;m also a little obsessed with{" "}
+              <strong>scrapbooking</strong>{" "}<span className="sticker sticker--rose">⋆୨୧˚</span>{" "}
+              which is exactly where this portfolio site takes inspiration from.
+            </p>
+          </div>
+
+          <aside className="edu-card">
+            <span className="edu-pin" aria-hidden="true" />
+            <div className="edu-head">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img className="edu-logo" src="/logos/berkeley.svg" alt="UC Berkeley crest" />
+              <h3 className="edu-school">UC Berkeley</h3>
+            </div>
+            <p className="edu-degree">B.A. Computer Science &amp; Applied Mathematics</p>
+            <ul className="edu-involve">
+              <li>
+                <a href="https://swe.berkeley.edu/" target="_blank" rel="noopener noreferrer">
+                  <b>Society of Women Engineers</b>
+                </a> · Treasurer
+              </li>
+              <li>
+                <a href="https://webatberkeley.org/" target="_blank" rel="noopener noreferrer">
+                  <b>Web Development at Berkeley</b>
+                </a> · Developer
+              </li>
+              <li>
+                <a href="https://berkeleyproject.org/" target="_blank" rel="noopener noreferrer">
+                  <b>Berkeley Project</b>
+                </a> · Web Committee
+              </li>
+              <li>
+                <a href="https://www.youtube.com/@KOSMOSUCB" target="_blank" rel="noopener noreferrer">
+                  <b>KOSMOS Dance Team</b>
+                </a> · Solstice Project Team
+              </li>
+            </ul>
+            <p className="edu-course-label edu-course-label--spaced">Relevant coursework</p>
+            <p className="edu-course">
+              Machine Learning · Artificial Intelligence · Data Structures ·
+              Probability Theory · Linear Algebra
+            </p>
+            <p className="edu-meta">Expected Dec 2026 · Berkeley, CA</p>
+          </aside>
+        </div>
+      </section>
 
       {/* experience */}
       <section className="section" id="experience">
@@ -16,19 +151,17 @@ export default function Home() {
         <div className="exp-list">
 
           <div className="exp-row">
-            <div className="exp-meta">
-              <div className="exp-date-full">Jun 2026 – Present</div>
-            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <span className="exp-logo"><img src="/logos/hyve.png" alt="" /></span>
             <div>
               <div className="exp-top">
                 <span className="exp-company">Hyve Solutions</span>
                 <span className="exp-role">Software Engineer Intern</span>
+                <span className="exp-date-full">Jun 2026 – Present</span>
               </div>
               <p className="exp-desc">
-              Implementing an LLM-powered document processing platform in Python 
-              that combines prompt engineering, RAG, REST APIs, and automated output 
-              validation to automate technical document analysis for AI infrastructure 
-              validation and integration testing.
+                Building an LLM document-processing platform in Python with prompt
+                engineering, RAG, REST APIs, and automated output validation.
               </p>
               <div className="chip-row">
                 <span className="chip">Flask</span>
@@ -40,21 +173,17 @@ export default function Home() {
           </div>
 
           <div className="exp-row">
-            <div className="exp-meta">
-              <div className="exp-date-full">Sep 2025 – Dec 2025</div>
-            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <span className="exp-logo"><img src="/logos/trackfly.png" alt="" /></span>
             <div>
               <div className="exp-top">
-                <span className="exp-company">Newrium Foundation</span>
-                <span className="exp-role">Software Engineer</span>
+                <span className="exp-company">TrackFly</span>
+                <span className="exp-role">Software Engineer Intern</span>
+                <span className="exp-date-full">Sep 2025 – Dec 2025</span>
               </div>
               <p className="exp-desc">
-                Owned development of customer-facing support and FAQ workflows,
-                translating Figma designs into production-ready Next.js features
-                and coordinating frontend integration across a 15-person
-                cross-functional team on a 10-week timeline. Shipped 15+ reusable
-                React/TypeScript components and architected MySQL schemas storing
-                100+ records with a Node.js email automation pipeline.
+                Shipped 15+ reusable React/TypeScript components from Figma in
+                Next.js, with MySQL schemas and a Node.js email automation pipeline.
               </p>
               <div className="chip-row">
                 <span className="chip">Next.js</span>
@@ -67,21 +196,17 @@ export default function Home() {
           </div>
 
           <div className="exp-row">
-            <div className="exp-meta">
-              <div className="exp-date-full">May 2025 – Aug 2025</div>
-            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <span className="exp-logo"><img src="/logos/barobo.png" alt="" /></span>
             <div>
               <div className="exp-top">
                 <span className="exp-company">Barobo</span>
                 <span className="exp-role">Software Engineer Intern</span>
+                <span className="exp-date-full">May 2025 – Aug 2025</span>
               </div>
               <p className="exp-desc">
-                Blocked unauthorized video sharing across 100% of user traffic
-                with AWS CloudFront signed URLs and per-user DynamoDB access
-                tracking, scaling to 10,000+ monthly requests. Reduced video load
-                time by 5% via CloudFront edge caching, and rewrote deployment as
-                Terraform + AWS CLI scripts, cutting provisioning from 2 hours to
-                15 minutes.
+                Secured 100% of video traffic with AWS CloudFront signed URLs and
+                DynamoDB access tracking at 10,000+ requests/mo.
               </p>
               <div className="chip-row">
                 <span className="chip">AWS</span>
@@ -93,21 +218,17 @@ export default function Home() {
           </div>
 
           <div className="exp-row">
-            <div className="exp-meta">
-              <div className="exp-date-full">May 2024 – May 2025</div>
-            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <span className="exp-logo"><img src="/logos/opal.png" alt="" /></span>
             <div>
               <div className="exp-top">
                 <span className="exp-company">Opal Mentorship App</span>
                 <span className="exp-role">Machine Learning Intern</span>
+                <span className="exp-date-full">May 2024 – May 2025</span>
               </div>
               <p className="exp-desc">
-                Raised mentor-mentee match accuracy by 12% across cohorts by
-                tuning 6 algorithmic scoring weights over two rounds of iteration.
-                Built a repeatable AWS Lambda + DynamoDB evaluation pipeline
-                scoring compatibility across 4 behavioral dimensions, and a
-                JavaScript dashboard visualizing distributions that drove 2 rounds
-                of weight calibration.
+                Raised mentor-match accuracy 12% with a repeatable AWS Lambda +
+                DynamoDB pipeline scoring compatibility across 4 dimensions.
               </p>
               <div className="chip-row">
                 <span className="chip">AWS Lambda</span>
@@ -118,19 +239,17 @@ export default function Home() {
           </div>
 
           <div className="exp-row">
-            <div className="exp-meta">
-              <div className="exp-date-full">Jan 2024 – May 2024</div>
-            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <span className="exp-logo"><img src="/logos/swingbeats.png" alt="" /></span>
             <div>
               <div className="exp-top">
                 <span className="exp-company">Swingbeats Research Lab</span>
                 <span className="exp-role">Frontend Web Developer</span>
+                <span className="exp-date-full">Jan 2024 – May 2024</span>
               </div>
               <p className="exp-desc">
-                Redesigned the haptic feedback research lab website in Figma and
-                rebuilt it with React, HTML, and CSS, responsive across desktop,
-                tablet, and mobile. Refactored the homepage into reusable
-                components, cutting redundant render logic across 3 page sections.
+                Rebuilt a haptics research lab site in React from Figma, responsive
+                across desktop, tablet, and mobile.
               </p>
               <div className="chip-row">
                 <span className="chip">React</span>
@@ -152,51 +271,16 @@ export default function Home() {
 
         <div className="proj-grid">
         
-          <a
-            className="proj-card proj-card--preview proj-card--tilt-left"
-            href="https://freshcheckfruit.vercel.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="View FreshCheck live"
-          >
-            <div className="proj-preview">
-              <Image
-                className="proj-preview-img"
-                src="/previews/freshcheck.png"
-                alt="FreshCheck app interface"
-                fill
-                sizes="(max-width: 768px) 100vw, 520px"
-              />
-              <span className="proj-preview-badge">View live <i className="ti ti-arrow-up-right" /></span>
-            </div>
-            <div className="proj-tape" />
-            <div className="proj-card-inner">
-              <div className="proj-card-top">
-                <div className="proj-name">FreshCheck</div>
-                <i className="ti ti-arrow-up-right proj-link" />
-              </div>
-              <p className="proj-sub">
-                An in-browser fruit-freshness classifier. A tiny 24K-parameter CNN runs sub-10ms
-                inference on-device with ONNX and WebAssembly, so photos never leave your phone,
-                hitting 100% validation accuracy at just 115 KB.
-              </p>
-              <div className="chip-row">
-                <span className="chip">PyTorch</span>
-                <span className="chip">ONNX</span>
-                <span className="chip">React</span>
-                <span className="chip">Vercel</span>
-              </div>
-            </div>
-          </a>
+          <FreshCheckCard />
 
-          <a
-            className="proj-card proj-card--preview proj-card--tilt-right"
-            href="https://huggingface.co/spaces/chengjcrystal/mbti-guesser"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="View MBTI Guesser live"
-          >
-            <div className="proj-preview">
+          <article className="proj-card proj-card--preview proj-card--tilt-right">
+            <a
+              className="proj-preview"
+              href="https://huggingface.co/spaces/chengjcrystal/mbti-guesser"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View MBTI Guesser live"
+            >
               <Image
                 className="proj-preview-img"
                 src="/previews/mbti.png"
@@ -205,17 +289,26 @@ export default function Home() {
                 sizes="(max-width: 768px) 100vw, 520px"
               />
               <span className="proj-preview-badge">View live <i className="ti ti-arrow-up-right" /></span>
-            </div>
+            </a>
             <div className="proj-tape" />
             <div className="proj-card-inner">
               <div className="proj-card-top">
                 <div className="proj-name">MBTI Guesser</div>
-                <i className="ti ti-arrow-up-right proj-link" />
+                <div className="proj-links">
+                  <a
+                    className="proj-actionlink"
+                    href="https://github.com/chengjcrystal/mbti-guesser"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="MBTI Guesser source code on GitHub"
+                  >
+                    <i className="ti ti-brand-github" /> Code
+                  </a>
+                </div>
               </div>
               <p className="proj-sub">
-                A free-form MBTI classifier built on BART-MNLI zero-shot inference instead of a fixed
-                survey. It fuses text, image, and numeric signals with DeepFace and OpenCV, reweighting
-                on the fly when some inputs are missing.
+                Free-form MBTI via BART-MNLI zero-shot, fusing text, image, and numeric
+                signals with DeepFace + OpenCV.
               </p>
               <div className="chip-row">
                 <span className="chip">Hugging Face Transformers</span>
@@ -224,15 +317,9 @@ export default function Home() {
                 <span className="chip">OpenCV</span>
               </div>
             </div>
-          </a>
+          </article>
 
-          <a
-            className="proj-card proj-card--solo proj-card--tilt-left"
-            href="https://github.com/chengjcrystal/reporank"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="View RepoRank on GitHub"
-          >
+          <article className="proj-card proj-card--solo proj-card--tilt-left">
             <div className="proj-tape" />
             <div className="proj-card-inner">
               <div className="proj-card-top">
@@ -240,13 +327,24 @@ export default function Home() {
                   RepoRank
                   <span className="proj-status">in progress</span>
                 </div>
-                <i className="ti ti-arrow-up-right proj-link" />
+                <div className="proj-links">
+                  <a
+                    className="proj-actionlink"
+                    href="https://github.com/chengjcrystal/reporank"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="RepoRank source code on GitHub"
+                  >
+                    <i className="ti ti-brand-github" /> Code
+                  </a>
+                  <span className="proj-actionlink proj-actionlink--muted">
+                    <i className="ti ti-tool" /> Demo soon
+                  </span>
+                </div>
               </div>
               <p className="proj-sub">
-                Currently building a GitHub repository search engine that ranks results with a BM25 scoring
-                algorithm written from scratch instead of pulling in a library. The FastAPI backend tokenizes
-                each query, builds an inverted index, and scores repositories with TF-IDF so the closest
-                matches come back first, all served through a typed REST API.
+                GitHub search engine ranking with a hand-written BM25 over an inverted
+                index, served through a typed FastAPI.
               </p>
               <div className="chip-row">
                 <span className="chip">FastAPI</span>
@@ -255,7 +353,7 @@ export default function Home() {
                 <span className="chip">Information Retrieval</span>
               </div>
             </div>
-          </a>
+          </article>
 
         </div>
       </section>
@@ -271,64 +369,174 @@ export default function Home() {
           <div className="skills-board-tape skills-board-tape--tl" />
           <div className="skills-board-tape skills-board-tape--tr" />
 
-          <div className="skills-columns">
+          <div className="skill-groups">
+            {SKILL_GROUPS.map((group) => (
+              <div className="skill-cat skill-group" key={group.title}>
+                <div className="skill-cat-head">
+                  <span className="skill-cat-label">{group.label}</span>
+                  <h3 className="skill-cat-title">{group.title}</h3>
+                </div>
+                <div className="skill-tiles">
+                  {group.items.map((item) => (
+                    <div className="skill-tile" key={item.name}>
+                      <span className="skill-tile-ico">
+                        {item.emoji ? (
+                          <span className="skill-tile-emoji">{item.icon}</span>
+                        ) : (
+                          <i className={item.icon} aria-hidden="true" />
+                        )}
+                      </span>
+                      <span className="skill-tile-name">{item.name}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            <div className="skill-col skill-group">
-              <div className="skill-col-header">
-                <span className="skill-col-label">what i build with</span>
-                <div className="skill-col-title">ML &amp; Frameworks</div>
-              </div>
-              <div className="skill-cards-wrap">
-                <span className="skill-hang-tag">PyTorch</span>
-                <span className="skill-hang-tag">Sklearn</span>
-                <span className="skill-hang-tag">NumPy</span>
-                <span className="skill-hang-tag">Pandas</span>
-                <span className="skill-hang-tag">ONNX</span>
-                <span className="skill-hang-tag">HuggingFace Transformers</span>
-                <span className="skill-hang-tag">OpenCV</span>
-                <span className="skill-hang-tag">React</span>
-                <span className="skill-hang-tag">Next.js</span>
-                <span className="skill-hang-tag">Bootstrap</span>
-                <span className="skill-hang-tag">REST APIs</span>
-              </div>
+      {/* beyond the code: the out-of-code leadership work. sits after the
+          technical block (experience/projects/skills) as the closing "extra".
+          image-led like a scrapbook photo page, printed-photo frames + a big
+          bold title + one line of caption each, so the pictures carry it */}
+      <section className="section" id="leadership">
+        <div className="section-header">
+          <h2 className="section-title">Beyond the Code</h2>
+          <span className="section-aside"><span className="aside-ico">♛</span> where i lead</span>
+        </div>
+
+        <div className="lead-grid">
+          <article className="lead-card lead-card--feature">
+            <div className="lead-photo lead-photo--wide">
+              <Image
+                src="/leadership/showdown.jpg"
+                alt="SWE Sector Showdown officers"
+                fill
+                sizes="(max-width: 860px) 100vw, 520px"
+              />
             </div>
-
-            <div className="skill-col skill-group">
-              <div className="skill-col-header">
-                <span className="skill-col-label">where it runs</span>
-                <div className="skill-col-title">Cloud &amp; DevOps</div>
+            <div className="lead-feature-body">
+              <span className="lead-org">Society of Women Engineers</span>
+              <h3 className="lead-title">Sector Showdown</h3>
+              <p className="lead-cap">
+                A brand-new officer engagement program I designed, ran, and managed
+                solo across a full semester, voted our top initiative of the term in
+                a vote by every officer.
+              </p>
+              <div className="lead-metrics">
+                <span className="lead-metric"><b>50</b> officers engaged</span>
+                <span className="lead-metric"><b>~100</b> challenge entries</span>
+                <span className="lead-metric"><b>#1</b> voted top initiative</span>
               </div>
-              <div className="skill-cards-wrap">
-                <span className="skill-hang-tag">AWS S3</span>
-                <span className="skill-hang-tag">CloudFront</span>
-                <span className="skill-hang-tag">DynamoDB</span>
-                <span className="skill-hang-tag">Lambda</span>
-                <span className="skill-hang-tag">Git</span>
-                <span className="skill-hang-tag">Linux</span>
-                <span className="skill-hang-tag">Docker</span>
-                <span className="skill-hang-tag">Jenkins</span>
-                <span className="skill-hang-tag">Terraform</span>
-                <span className="skill-hang-tag">Postman</span>
-              </div>
+              <blockquote className="lead-quote">
+                &ldquo;Sector Showdown has been a huge success. Crystal puts in
+                so much effort, going well beyond her role as Treasurer.&rdquo;
+                <cite>Negar Morshedian &middot; SWE President, 2025&ndash;26</cite>
+              </blockquote>
             </div>
+          </article>
 
-            <div className="skill-col skill-group">
-              <div className="skill-col-header">
-                <span className="skill-col-label">what i write in</span>
-                <div className="skill-col-title">Languages</div>
-              </div>
-              <div className="skill-cards-wrap">
-                <span className="skill-hang-tag">Python</span>
-                <span className="skill-hang-tag">C/C++</span>
-                <span className="skill-hang-tag">JavaScript</span>
-                <span className="skill-hang-tag">SQL</span>
-                <span className="skill-hang-tag">Bash</span>
-                <span className="skill-hang-tag">HTML/CSS</span>
-                <span className="skill-hang-tag">Tailwind</span>
-                <span className="skill-hang-tag">MATLAB</span>
-              </div>
+          <article className="lead-card">
+            <div className="lead-photo lead-photo--up">
+              <Image
+                src="/leadership/treasurer.jpg"
+                alt="Crystal Cheng with the Society of Women Engineers officer team"
+                fill
+                sizes="(max-width: 720px) 100vw, 340px"
+              />
             </div>
+            <span className="lead-org">Society of Women Engineers</span>
+            <h3 className="lead-title">Treasurer</h3>
+            <p className="lead-cap">
+              Budget and finance for Berkeley&rsquo;s largest engineering org,
+              funding corporate collaborations and K-12 STEM outreach.
+            </p>
+            <div className="lead-metrics">
+              <span className="lead-metric"><b>$60K+</b> managed</span>
+              <span className="lead-metric"><b>100+</b> members funded</span>
+            </div>
+          </article>
 
+          <article className="lead-card">
+            <div className="lead-photo lead-photo--bright">
+              <Image
+                src="/leadership/kosmos.jpg"
+                alt="KOSMOS dance performance"
+                fill
+                sizes="(max-width: 720px) 100vw, 340px"
+              />
+            </div>
+            <span className="lead-org">
+              <a href="https://www.youtube.com/@KOSMOSUCB" target="_blank" rel="noopener noreferrer">
+                KOSMOS Dance Team
+              </a>
+            </span>
+            <h3 className="lead-title">Dance Lead</h3>
+            <p className="lead-cap">
+              Practice lead and performer for three of our most popular performances
+              within Solstice, KOSMOS&rsquo;s project team.
+            </p>
+            <div className="lead-metrics">
+              <span className="lead-metric"><b>15+</b> performances</span>
+              <span className="lead-metric"><b>32</b> dancers</span>
+            </div>
+          </article>
+
+          <article className="lead-card">
+            <div className="lead-photo">
+              <Image
+                src="/leadership/race2021.jpg"
+                alt="Race to 2021 fundraiser"
+                fill
+                sizes="(max-width: 720px) 100vw, 340px"
+              />
+            </div>
+            <span className="lead-org">Race to 2021</span>
+            <h3 className="lead-title">Founder</h3>
+            <p className="lead-cap">
+              A fitness fundraiser built from scratch, turning daily workouts into
+              PPE donations for the Valley Medical Center Foundation.
+            </p>
+            <div className="lead-metrics">
+              <span className="lead-metric"><b>$3,000</b> raised</span>
+              <span className="lead-metric"><b>110</b> participants</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      {/* contact: closing CTA. ultra-minimal, a single hand-sewn running-stitch
+          seam as the only scrapbook nod (horizontal, decorative, needs no
+          border to hold), lots of whitespace */}
+      <section className="section contact-section" id="contact">
+        <div className="contact-min">
+          {/* a little envelope: this section's job is to reach out, so it wears
+              the motif that says 'message me', the way skills wears a clipboard */}
+          <svg className="contact-envelope" viewBox="0 -12 72 62" aria-hidden="true" focusable="false">
+            <g stroke="var(--brown2)" strokeWidth="2" strokeLinejoin="round" strokeLinecap="round">
+              <rect x="13" y="14" width="46" height="28" rx="3.5" fill="#EFE3D2" />
+              <polygon className="env-flap" points="13,14 59,14 36,33" fill="#E3D2B9" />
+            </g>
+          </svg>
+
+          <h2 className="contact-title">Let&rsquo;s talk.</h2>
+
+          <p className="contact-sub">
+            Graduating from UC Berkeley in December 2026, open to full-time
+            software &amp; ML roles starting January 2027.
+          </p>
+
+          <a className="contact-email" href="mailto:chengjcrystal@gmail.com">
+            chengjcrystal@gmail.com
+          </a>
+
+          <div className="contact-social">
+            {SOCIALS.map((s) => (
+              <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer">
+                {s.label} ↗
+              </a>
+            ))}
           </div>
         </div>
       </section>

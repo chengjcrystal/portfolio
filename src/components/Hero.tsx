@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { Fragment, useRef } from "react";
+import PhotoDoodle from "@/components/PhotoDoodle";
 
 const NAME = "Crystal Cheng";
 
@@ -87,8 +88,6 @@ export default function Hero() {
         <div className="hero-left">
           <p className="eyebrow">UC Berkeley &nbsp;·&nbsp; CS + Applied Math</p>
 
-          <p className="hero-greeting">Hi! I&rsquo;m</p>
-
           <h1 className="hero-name" style={{ fontFamily: "var(--font-fredoka), sans-serif" }}>
             <span className="hero-name-animated">
               {NAME_WORDS.map((word, wi) => (
@@ -115,7 +114,7 @@ export default function Hero() {
           </h1>
 
           <p className="hero-desc">
-          I'm a Software Engineer Intern at Hyve Solutions, building{" "}
+          Currently a Software Engineer Intern at Hyve Solutions, building{" "}
           <span className="hero-desc-nowrap">AI-enabled</span> workflow solutions
           while sipping a{" "}
           <span className="hero-desc-nowrap">cup of vanilla espresso&nbsp;⋆.˚☕︎</span>
@@ -123,7 +122,7 @@ export default function Hero() {
 
           <div className="btn-row">
             <a
-              className="btn btn-solid"
+              className="btn btn-solid btn-primary"
               href="/assets/crystal-resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
@@ -131,7 +130,7 @@ export default function Hero() {
               <i className="ti ti-file-text" /> Resume
             </a>
             <a
-              className="btn btn-solid"
+              className="btn"
               href="https://linkedin.com/in/chengjcrystal"
               target="_blank"
               rel="noopener noreferrer"
@@ -139,7 +138,7 @@ export default function Hero() {
               <i className="ti ti-brand-linkedin" /> LinkedIn
             </a>
             <a
-              className="btn btn-solid"
+              className="btn"
               href="https://github.com/chengjcrystal"
               target="_blank"
               rel="noopener noreferrer"
@@ -160,12 +159,15 @@ export default function Hero() {
                 className="polaroid-lg-photo"
                 src="/sfsmile.jpg"
                 alt="Crystal Cheng"
-                width={3023}
-                height={3023}
+                width={1600}
+                height={1600}
+                sizes="(max-width: 900px) 320px, 440px"
                 priority
-                unoptimized
               />
-              <p className="polaroid-lg-caption">grad dec &rsquo;26 · open to work jan &rsquo;27</p>
+              <p className="polaroid-lg-caption">open to work jan &rsquo;27</p>
+
+              {/* move your mouse over the print to draw; marks fade like chalk residue */}
+              <PhotoDoodle />
             </div>
 
           </div>

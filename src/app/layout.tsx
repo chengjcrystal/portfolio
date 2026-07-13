@@ -46,6 +46,10 @@ export default function RootLayout({
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"
         />
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+        />
       </head>
       <body
         className={`${nunito.variable} ${dmSans.variable} ${jetbrainsMono.variable} ${fredoka.variable}`}

@@ -14,14 +14,16 @@
   --brown2:  #5C3D26;
   --brown3:  #8A6448;
   --brown4:  #B8967A;
-  --muted:   #A08870;
+  --muted:   #7A6047;
   --title:   var(--font-nunito), system-ui, sans-serif;
   --body:    var(--font-dm-sans), system-ui, sans-serif;
   --mono:    var(--font-jetbrains-mono), monospace;
   --display: var(--font-fredoka), system-ui, sans-serif;
 }
 
-html { scroll-behavior: smooth; }
+/* offset anchor jumps by the sticky nav's height (~57px) so section titles
+   land just below the bar instead of hidden behind it */
+html { scroll-behavior: smooth; scroll-padding-top: 64px; }
 
 body {
   background: var(--bg);
@@ -36,12 +38,12 @@ a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; }
 
 
-/* one deliberate flourish: sparkle cursor on the hero name only, pairing with
-   the letter-bounce animation. native cursors everywhere else. */
+/* one deliberate flourish: sparkle cursor on the hero name's letters only, so it
+   tracks the glyphs and not the empty space in the headline box. native
+   cursors everywhere else. */
 
 @media (hover: hover) and (pointer: fine) {
-  .hero-name,
-  .hero-name * {
+  .hero-name-letter {
     cursor: url("/cursor-sparkle.png") 10 12, auto !important;
   }
 }
@@ -100,19 +102,29 @@ nav {
 .nav-links a:not(.nav-contact):hover { color: var(--brown); }
 .nav-links a:not(.nav-contact):hover::after { width: 100%; }
 
+/* same hand-stitched tag as the hero buttons and chips, just scaled down for
+   the nav so Contact reads as one of the site's scrapbook labels, not a stray
+   solid UI pill */
 .nav-contact {
-  border: 0.5px solid var(--brown2);
-  border-radius: 20px;
-  padding: 7px 20px;
+  display: inline-flex;
+  align-items: center;
+  border: 1.5px dashed rgba(92, 61, 38, 0.5);
+  border-radius: 7px;
+  padding: 6px 16px;
   font-family: var(--body);
   font-size: 14px;
-  color: var(--brown2);
-  transition: background 0.2s, color 0.2s;
+  font-weight: 600;
+  color: var(--brown);
+  background: #FBF5EC;
+  box-shadow: 0 1px 4px rgba(74, 55, 40, 0.12);
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s, transform 0.15s;
 }
 
 .nav-contact:hover {
-  background: var(--brown2);
-  color: var(--bg);
+  border-color: rgba(44, 26, 14, 0.72);
+  background: #fff;
+  box-shadow: 0 3px 9px rgba(74, 55, 40, 0.2);
+  transform: translateY(-1px);
 }
 
 
@@ -132,7 +144,7 @@ nav {
   margin-inline: auto;
   width: 100%;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(300px, 400px);
+  grid-template-columns: minmax(0, 1fr) minmax(340px, 460px);
   gap: 2rem 3rem;
   align-items: center;
   flex: 1;
@@ -159,24 +171,14 @@ nav {
   margin-bottom: 0.875rem;
 }
 
-.hero-greeting {
-  font-family: var(--font-fredoka), var(--display), system-ui, sans-serif;
-  font-size: clamp(24px, 3vw, 34px);
-  font-weight: 500;
-  color: var(--brown3);
-  line-height: 1.1;
-  letter-spacing: 0.01em;
-  margin-bottom: 0.1rem;
-}
-
 .hero-name {
   font-family: var(--font-fredoka), var(--display), system-ui, sans-serif;
-  font-size: clamp(60px, 8.5vw, 96px);
-  font-weight: 600;
+  font-size: clamp(72px, 10.5vw, 124px);
+  font-weight: 700;
   color: var(--brown4);
-  line-height: 1.04;
-  letter-spacing: 0.01em;
-  margin-bottom: 1.25rem;
+  line-height: 0.98;
+  letter-spacing: -0.005em;
+  margin-bottom: 1.4rem;
   text-align: left;
 }
 
@@ -193,12 +195,12 @@ nav {
 }
 
 .hero-desc {
-  font-size: 18px;
+  font-size: clamp(19px, 1.5vw, 21px);
   color: var(--brown2);
-  line-height: 1.65;
+  line-height: 1.6;
   font-weight: 400;
   max-width: 34rem;
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.9rem;
 }
 
 /* keep "espresso ⋆.˚☕︎" together so the symbols never orphan onto their own line */
@@ -210,37 +212,57 @@ nav {
   flex-wrap: wrap;
 }
 
+/* squared stitched-tag buttons: same dashed seam as the chips but drawn in a
+   darker ink and lifted on a soft shadow, so recruiters still read them as
+   clickable buttons and not flat decorative labels */
 .btn {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  border: 0.5px solid var(--border);
-  border-radius: 24px;
+  border: 1.5px dashed rgba(60, 40, 24, 0.62);
+  border-radius: 7px;
   padding: 10px 20px;
   font-size: 14px;
+  font-weight: 600;
   font-family: var(--body);
-  color: var(--brown2);
-  background: transparent;
+  color: var(--brown);
+  background: #FBF5EC;
   cursor: pointer;
-  transition: border-color 0.2s, background 0.2s, transform 0.15s;
+  box-shadow: 0 2px 6px rgba(74, 55, 40, 0.15);
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s, transform 0.15s;
 }
 
 .btn:hover {
-  border-color: var(--brown3);
-  background: var(--bg2);
+  border-color: rgba(44, 26, 14, 0.8);
+  background: #fff;
+  box-shadow: 0 4px 11px rgba(74, 55, 40, 0.22);
   transform: translateY(-1px);
 }
 
+/* primary CTA stays a solid filled tag so the hierarchy still reads at a glance */
 .btn-solid {
   background: var(--brown);
   color: var(--bg);
-  border-color: var(--brown);
+  border: 1px solid var(--brown);
 }
 
 .btn-solid:hover {
   background: var(--brown2);
   border-color: var(--brown2);
   transform: translateY(-1px);
+}
+
+/* primary CTA: the resume button leads. heavier weight + a soft lift so it
+   reads as the first thing to click, outline buttons sit back as secondary */
+.btn-primary {
+  font-weight: 600;
+  padding-inline: 24px;
+  box-shadow: 0 4px 14px rgba(74, 55, 40, 0.22);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 6px 18px rgba(74, 55, 40, 0.28);
+  transform: translateY(-2px);
 }
 
 .hero-scroll-hint {
@@ -259,12 +281,12 @@ nav {
 }
 
 
-/* hero visual — big polaroid headshot */
+/* hero visual: big polaroid headshot */
 
 .hero-visual {
   position: relative;
   width: 100%;
-  max-width: 380px;
+  max-width: 440px;
   margin-left: auto;
   /* the photo + tape settle into place as one piece, like being set down and pinned */
   animation: polaroid-settle 0.85s cubic-bezier(0.22, 1, 0.36, 1) both;
@@ -290,14 +312,29 @@ nav {
     3px 3px 0 var(--border),
     6px 6px 0 rgba(44, 26, 14, 0.06),
     0 16px 40px rgba(44, 26, 14, 0.16);
-  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+  transition: box-shadow 0.35s ease;
 }
 
+/* on hover the print stays put (no lift, so it never reads as a button);
+   the shadow just softens a touch while the ink doodles draw themselves on */
 .polaroid-lg:hover {
-  transform: translateY(-5px);
   box-shadow:
-    0 0 0 1px var(--brown4),
-    0 22px 54px rgba(44, 26, 14, 0.22);
+    3px 3px 0 var(--border),
+    6px 6px 0 rgba(44, 26, 14, 0.06),
+    0 20px 46px rgba(44, 26, 14, 0.18);
+}
+
+/* canvas for the light trail; screen blend means it can only lighten the
+   photo (never cover it), so the effect illuminates rather than draws over */
+.polaroid-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 4;
+  border-radius: 4px;
+  mix-blend-mode: screen;
 }
 
 .polaroid-lg-photo {
@@ -340,10 +377,11 @@ nav {
 }
 
 .section > .section-header,
+.section > .about-body,
 .section > .exp-list,
 .section > .proj-grid,
-.section > .skills-board,
-.section > .contact-wrap {
+.section > .lead-grid,
+.section > .skills-board {
   max-width: 1080px;
   margin-inline: auto;
   width: 100%;
@@ -353,16 +391,18 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 5px;
-  margin-bottom: 1.75rem;
+  gap: 7px;
+  margin-bottom: 2.5rem;
 }
 
 .section-title {
   font-family: var(--title);
-  font-size: 32px;
-  font-weight: 700;
+  font-size: clamp(40px, 6vw, 68px);
+  font-weight: 800;
   color: var(--brown);
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+  text-transform: uppercase;
 }
 
 .section-aside {
@@ -372,6 +412,399 @@ nav {
   letter-spacing: 0.04em;
 }
 
+/* about + education: bio on the left, branded education card filling the right */
+.about-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 400px);
+  gap: clamp(2rem, 4vw, 3.75rem);
+  align-items: start;
+}
+
+.about-bio {
+  max-width: 58ch;
+}
+
+.about-bio p {
+  font-size: clamp(17px, 1.5vw, 20px);
+  line-height: 1.8;
+  color: var(--brown2);
+}
+
+.about-bio p + p {
+  margin-top: 1.1rem;
+}
+
+.about-bio strong {
+  color: var(--brown);
+  font-weight: 700;
+}
+
+/* education as a page from a dot-grid bullet journal: a bright off-white paper
+   with a faint, well-spaced dot lattice, a defined border and a lift shadow so
+   it pops off the cream page. clean corners, no ruled lines or torn edge. */
+.edu-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  width: 100%;
+  padding: clamp(1.9rem, 2.6vw, 2.35rem) clamp(1.7rem, 2.4vw, 2.1rem);
+  background-color: #FFFFFF;
+  background-image: radial-gradient(
+    rgba(92, 61, 38, 0.05) 1px,
+    transparent 1.5px
+  );
+  background-size: 23px 23px;
+  background-position: 16px 22px;
+  border: 1px solid rgba(92, 61, 38, 0.14);
+  border-radius: 9px;
+  box-shadow: 0 14px 34px rgba(44, 26, 14, 0.16);
+}
+
+/* pushpin holding the card to the page: a small domed head with a top-left
+   highlight and a soft cast shadow, echoing the "set down and pinned" language
+   the polaroid tape already uses */
+.edu-pin {
+  position: absolute;
+  top: -11px;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 34% 30%, #F4B7C4 0 14%, #DE7C97 42%, #C25E7E 100%);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.6),
+    inset -1px -2px 3px rgba(120, 40, 66, 0.45),
+    0 4px 7px rgba(44, 26, 14, 0.28);
+  z-index: 3;
+}
+
+/* the pin's little glint */
+.edu-pin::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4.5px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.edu-head {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.edu-logo {
+  flex-shrink: 0;
+  width: clamp(66px, 7vw, 82px);
+  height: auto;
+  filter: drop-shadow(0 3px 6px rgba(44, 26, 14, 0.18));
+}
+
+.edu-school {
+  font-family: var(--title);
+  font-size: clamp(26px, 3vw, 34px);
+  font-weight: 800;
+  color: var(--brown);
+  line-height: 1.02;
+  letter-spacing: -0.01em;
+}
+
+.edu-degree {
+  font-size: 15.5px;
+  font-weight: 600;
+  color: var(--brown2);
+  line-height: 1.4;
+}
+
+.edu-involve {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.edu-involve li {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.edu-involve li b {
+  color: var(--brown2);
+  font-weight: 600;
+}
+
+.edu-course-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--brown3);
+}
+
+/* extra breathing room in place of the old divider line, no rule */
+.edu-course-label--spaced {
+  margin-top: 0.9rem;
+}
+
+.edu-course {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--brown2);
+}
+
+.edu-meta {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+
+.edu-involve a {
+  color: var(--brown2);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.edu-involve a:hover {
+  color: var(--brown);
+  border-bottom-color: var(--brown4);
+}
+
+/* little keyboard-style stickers in the bio, each its own warm hue. kept as
+   inline-block with line-height:0 so they can render a touch larger without
+   adding leading to their line (that was what made one line taller than its
+   neighbours) */
+.sticker {
+  display: inline-block;
+  line-height: 0;
+  font-size: 1.25em;
+  font-weight: 700;
+  vertical-align: -0.02em;
+  color: #C0845A;
+}
+
+.sticker--gold { color: #D79A2C; }
+.sticker--rose { color: #D6789A; }
+.sticker--gear { color: #B47A2A; }
+
+/* the leadership crown sits on its own aside line, so it can run larger */
+.aside-ico {
+  font-size: 19px;
+  color: #CF9A2E;
+  vertical-align: -0.16em;
+  margin-right: 3px;
+}
+
+/* the closing block reads as its own quiet page: generous air above and below
+   so it stays big and minimal even with less copy */
+#about {
+  padding-top: clamp(4.5rem, 11vh, 8rem);
+  padding-bottom: clamp(4.5rem, 11vh, 8rem);
+}
+
+#about .section-header {
+  margin-bottom: clamp(2.5rem, 5vh, 3.5rem);
+}
+
+@media (max-width: 860px) {
+  .about-body {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+  }
+  .edu-card { max-width: 560px; }
+}
+
+
+/* beyond the code: an image-led scrapbook photo page. three printed-photo
+   frames, each with a big bold title and one line of caption, so the pictures
+   do the talking (Sancho-style, big/bold/minimal) */
+.lead-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.6rem, 3vw, 2.6rem);
+}
+
+.lead-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+/* the flagship spans the full row: photo on the left, the story + stats +
+   a real officer quote on the right, so it clearly outweighs the two roles */
+.lead-card--feature {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 3vw, 2.75rem);
+  align-items: center;
+  margin-bottom: clamp(0.5rem, 1.5vw, 1.25rem);
+}
+
+.lead-feature-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.55rem;
+}
+
+.lead-card--feature .lead-title {
+  font-size: clamp(30px, 4vw, 44px);
+}
+
+.lead-card--feature .lead-cap {
+  font-size: 16px;
+  max-width: 52ch;
+}
+
+/* a printed photo: thick cream border + soft shadow, like it was pasted in */
+.lead-photo {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 6px solid #FBF7F0;
+  box-shadow: 1px 5px 16px rgba(44, 26, 14, 0.16);
+  margin-bottom: 0.7rem;
+}
+
+.lead-photo--wide {
+  aspect-ratio: 3 / 2;
+  margin-bottom: 0;
+}
+
+/* pull-quote: social proof from a named officer beats a self-reported number */
+.lead-quote {
+  margin-top: 0.5rem;
+  padding-left: 0.9rem;
+  border-left: 2px solid var(--brown4);
+  font-style: italic;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--brown2);
+  max-width: 46ch;
+}
+
+.lead-quote cite {
+  display: block;
+  margin-top: 0.35rem;
+  font-style: normal;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--brown3);
+}
+
+.lead-photo img {
+  object-fit: cover;
+}
+
+/* portrait source in a landscape frame: light zoom, and bias the crop toward the
+   left of the image so the extra sponsor wall on our right is trimmed and we sit
+   centered */
+.lead-photo--up img {
+  object-position: center 50%;
+  transform: scale(1.15);
+  transform-origin: 32% 50%;
+}
+
+/* the wide feature photo (fountain): bias down toward the people, not the sky */
+.lead-photo--wide img {
+  object-position: center 62%;
+}
+
+/* lift the darkest (night) photo so it isn't a heavy block on the cream page */
+.lead-photo--bright img {
+  filter: brightness(1.2) contrast(1.02) saturate(1.04);
+}
+
+.lead-org {
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--brown3);
+}
+
+.lead-org a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.lead-org a:hover {
+  color: var(--brown);
+  border-bottom-color: var(--brown4);
+}
+
+.lead-title {
+  font-family: var(--title);
+  font-size: clamp(24px, 2.8vw, 32px);
+  font-weight: 800;
+  color: var(--brown);
+  /* a hair more line-height + top padding so tall caps (T, S) never clip at the
+     top of the card's flex box when the section settles */
+  line-height: 1.14;
+  padding-top: 0.06em;
+  letter-spacing: -0.015em;
+}
+
+.lead-cap {
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--brown2);
+}
+
+.lead-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 0.4rem;
+}
+
+/* same hand-stitched paper tag as the .chip tags, so the metrics read as
+   scrapbook labels rather than filled UI pills */
+.lead-metric {
+  font-family: var(--body);
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--brown2);
+  background: rgba(255, 253, 250, 0.55);
+  border: 1px dashed rgba(92, 61, 38, 0.32);
+  border-radius: 5px;
+  padding: 3px 10px;
+  white-space: nowrap;
+}
+
+.lead-metric b {
+  color: var(--brown);
+  font-weight: 700;
+}
+
+@media (max-width: 860px) {
+  .lead-card--feature {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .lead-photo--wide { aspect-ratio: 3 / 2; margin-bottom: 0.7rem; }
+}
+
+@media (max-width: 720px) {
+  .lead-grid { grid-template-columns: 1fr; max-width: 440px; margin-inline: auto; }
+}
+
 
 /* experience */
 
@@ -379,9 +812,10 @@ nav {
 
 .exp-row {
   display: grid;
-  grid-template-columns: 120px minmax(0, 1fr);
-  gap: 1.25rem 2rem;
-  padding: 1.25rem 0.75rem;
+  grid-template-columns: 160px minmax(0, 1fr);
+  gap: 0 2.25rem;
+  align-items: center;
+  padding: 1.5rem 0.75rem;
   border-bottom: 0.5px solid var(--bg2);
   border-radius: 10px;
   transition: background 0.25s, color 0.25s, padding 0.2s;
@@ -389,53 +823,76 @@ nav {
 
 .exp-row:last-child { border-bottom: none; }
 
-.exp-meta {
+/* company logos: the mark itself, no framing box, centered in the left column */
+.exp-logo {
   display: flex;
-  flex-direction: column;
-  gap: 2px;
-  padding-top: 4px;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* normalized to a consistent visual weight, capped by height, centered on one axis */
+.exp-logo img {
+  max-width: 112px;
+  max-height: 84px;
+  width: auto;
+  height: auto;
+  display: block;
+}
+
+.exp-row:hover .exp-logo {
+  transform: translateY(-2px) rotate(-2deg);
 }
 
 .exp-date-full {
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 12px;
   color: var(--brown3);
   font-weight: 400;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   transition: color 0.25s;
   line-height: 1.5;
+  /* pin to the right edge of the row so each entry fills the full width,
+     giving the section a right anchor to balance the left-aligned content */
+  margin-left: auto;
+  white-space: nowrap;
 }
 
 .exp-top {
   display: flex;
   align-items: baseline;
-  gap: 10px;
-  margin-bottom: 6px;
+  gap: 10px 14px;
+  margin-bottom: 8px;
   flex-wrap: wrap;
 }
 
 .exp-company {
   font-family: var(--title);
-  font-size: 18px;
-  font-weight: 700;
+  font-size: clamp(24px, 3vw, 34px);
+  font-weight: 800;
   color: var(--brown);
+  letter-spacing: -0.015em;
+  line-height: 1.05;
   transition: color 0.25s;
 }
 
 .exp-role {
-  font-family: var(--body);
-  font-size: 14px;
-  color: var(--brown2);
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--brown3);
   font-weight: 400;
   transition: color 0.25s;
 }
 
 .exp-desc {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--brown2);
-  line-height: 1.65;
+  line-height: 1.6;
   font-weight: 400;
-  max-width: 68ch;
+  max-width: 62ch;
   margin-bottom: 12px;
   transition: color 0.25s;
 }
@@ -452,9 +909,9 @@ nav {
 .exp-row:hover .exp-desc      { color: var(--brown2); }
 
 .exp-row:hover .chip {
-  background: rgba(255,255,255,0.55);
-  border-color: var(--brown4);
-  color: var(--brown2);
+  background: rgba(255, 255, 255, 0.7);
+  border-color: rgba(92, 61, 38, 0.42);
+  color: var(--brown);
 }
 
 .chip-row {
@@ -463,15 +920,19 @@ nav {
   gap: 5px;
 }
 
+/* little hand-stitched paper tags: a dashed seam instead of a solid fill or a
+   leading dot, so they read as scrapbook labels (echoing the contact seam),
+   not UI pills or activity buttons */
 .chip {
   font-family: var(--body);
-  font-size: 12px;
+  font-size: 11.5px;
+  font-weight: 600;
   color: var(--brown2);
-  background: var(--bg2);
-  border: 0.5px solid var(--border);
-  border-radius: 20px;
-  padding: 4px 13px;
-  transition: background 0.25s, border-color 0.25s, color 0.25s;
+  background: rgba(255, 253, 250, 0.55);
+  border: 1px dashed rgba(92, 61, 38, 0.32);
+  border-radius: 5px;
+  padding: 3px 10px;
+  transition: background 0.25s, color 0.25s, border-color 0.25s;
 }
 
 
@@ -602,48 +1063,184 @@ a.proj-card { text-decoration: none; color: inherit; display: block; }
 .proj-card-top {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
+  gap: 0.75rem;
   margin-bottom: 0.75rem;
 }
 
 .proj-name {
   font-family: var(--display);
-  font-size: 22px;
-  font-weight: 600;
+  font-size: clamp(26px, 3vw, 36px);
+  font-weight: 700;
   color: var(--brown);
-  line-height: 1.2;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
   padding-right: 0.5rem;
 }
 
-.proj-link {
-  color: var(--brown4);
-  font-size: 18px;
-  transition: color 0.2s, transform 0.2s;
-  display: inline-block;
+/* action buttons live in the title row (proj-card-top), right-aligned, so they
+   read as buttons and reclaim the vertical space the old bottom row took */
+.proj-links {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
 }
 
-.proj-link:hover {
+.proj-actionlink {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: 0.02em;
+  color: var(--brown);
+  border: 1px solid rgba(92, 61, 38, 0.28);
+  border-radius: 6px;
+  padding: 5px 10px;
+  background: #FBF5EC;
+  box-shadow: 0 1px 3px rgba(74, 55, 40, 0.12);
+  transition: color 0.2s, background 0.2s, border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+}
+
+.proj-actionlink i { font-size: 14px; }
+
+.proj-actionlink:hover {
+  background: #fff;
+  border-color: rgba(92, 61, 38, 0.45);
+  box-shadow: 0 3px 8px rgba(74, 55, 40, 0.2);
+  transform: translateY(-1px);
+}
+
+.proj-actionlink--muted,
+.proj-actionlink--muted:hover {
+  color: var(--muted);
+  cursor: default;
+  background: transparent;
+  border-style: dashed;
+  border-color: rgba(92, 61, 38, 0.22);
+  box-shadow: none;
+  transform: none;
+}
+
+/* the preview image is the primary action: a link (opens live in a new tab) or,
+   for FreshCheck, a button that opens the live demo in a modal */
+a.proj-preview { display: block; }
+
+.proj-preview--btn {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: var(--bg2);
+  font: inherit;
+  cursor: pointer;
+}
+
+/* FreshCheck live demo opens in a large centered modal (portalled to <body> so
+   the card's tilt transform doesn't trap the fixed overlay), giving the app room
+   to breathe instead of a cramped inline frame under a near-identical screenshot */
+.demo-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1rem, 4vw, 3rem);
+  background: rgba(44, 26, 14, 0.55);
+  backdrop-filter: blur(3px);
+  animation: demo-fade 0.2s ease;
+}
+
+.demo-modal-panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: min(1000px, 100%);
+  height: min(80vh, 780px);
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(44, 26, 14, 0.4);
+  animation: demo-pop 0.25s cubic-bezier(0.34, 1.4, 0.64, 1);
+}
+
+.demo-modal-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 9px 10px 9px 14px;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.02em;
   color: var(--brown2);
-  transform: translate(2px, -2px);
+  background: #EFE7DB;
+  border-bottom: 0.5px solid rgba(92, 61, 38, 0.18);
+}
+
+.demo-modal-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.demo-modal-actions a,
+.demo-modal-actions button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--brown3);
+  font-size: 17px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.demo-modal-actions a:hover,
+.demo-modal-actions button:hover {
+  background: rgba(92, 61, 38, 0.1);
+  color: var(--brown);
+}
+
+.demo-modal-panel iframe {
+  flex: 1;
+  width: 100%;
+  border: 0;
+  background: var(--bg2);
+}
+
+@keyframes demo-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes demo-pop {
+  from { opacity: 0; transform: translateY(12px) scale(0.98); }
+  to   { opacity: 1; transform: none; }
 }
 
 .proj-sub {
-  font-size: 14px;
+  font-size: 15.5px;
   color: var(--brown2);
   font-weight: 400;
   margin-bottom: 1.25rem;
-  line-height: 1.65;
+  line-height: 1.6;
 }
 
 
-/* skills — index cards on a board */
+/* skills: index cards on a board */
 
 .skills-board {
   position: relative;
   background: #EDE0CE;
   border: 1px solid var(--border);
   border-radius: 16px;
-  padding: 2.5rem 2rem 2.75rem;
+  padding: 1.75rem 1.75rem 2rem;
   box-shadow:
     inset 0 1px 3px rgba(44,26,14,0.05),
     0 6px 24px rgba(44,26,14,0.08);
@@ -670,309 +1267,238 @@ a.proj-card { text-decoration: none; color: inherit; display: block; }
   height: 16px;
 }
 
-.skills-columns {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2.5rem;
+/* skills: stacked category rows, each a grid of bold logo tiles, scaled up to
+   carry the same weight as Experience and Projects */
+.skill-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
 }
 
-.skill-col-header {
-  margin-bottom: 1.25rem;
+.skill-cat + .skill-cat {
+  border-top: 0.5px solid rgba(92,61,38,0.14);
+  padding-top: 1.4rem;
 }
 
-.skill-col-label {
+.skill-cat-head {
+  margin-bottom: 0.9rem;
+}
+
+.skill-cat-label {
+  display: block;
   font-family: var(--mono);
-  font-size: 9px;
-  letter-spacing: 0.12em;
+  font-size: 10px;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--brown3);
-  display: block;
-  margin-bottom: 4px;
+  margin-bottom: 5px;
 }
 
-.skill-col-title {
-  font-family: var(--display);
-  font-size: 20px;
-  font-weight: 600;
+.skill-cat-title {
+  font-family: var(--title);
+  font-size: clamp(20px, 2.2vw, 27px);
+  font-weight: 800;
   color: var(--brown);
-  line-height: 1.1;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
 }
 
-.skill-cards-wrap {
+.skill-tiles {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   gap: 8px;
-  align-items: flex-start;
-  padding-top: 4px;
 }
 
-.skill-hang-tag {
+.skill-tile {
   position: relative;
-  background: #F5F0EB;
-  border: 0.5px solid rgba(92,61,38,0.25);
-  border-radius: 3px;
-  padding: 6px 10px 5px;
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--brown2);
-  letter-spacing: 0.02em;
-  cursor: default;
-  transform-origin: top center;
-  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s, background 0.2s, color 0.2s;
-  box-shadow: 1px 2px 5px rgba(44,26,14,0.12);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #FFFDFB;
+  border: 0.75px solid rgba(92,61,38,0.16);
+  border-radius: 6px;
+  padding: 11px 12px 8px 11px; /* extra top room for the punched hole */
+  box-shadow: 1px 3px 9px rgba(44,26,14,0.16);
+  transform-origin: top center; /* hangs from the hole */
+  transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s, border-color 0.2s, background 0.2s;
 }
 
-.skill-hang-tag::before {
+/* punched hole with a little grommet, so each tile reads as a luggage tag */
+.skill-tile::before {
   content: "";
   position: absolute;
-  top: 3px;
+  top: 4px;
   left: 50%;
   transform: translateX(-50%);
-  width: 5px;
-  height: 5px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
-  background: #C8A882;
-  border: 0.5px solid rgba(92,61,38,0.3);
-  box-shadow: inset 0 1px 2px rgba(44,26,14,0.2);
+  background: #EDE0CE; /* board colour shows through the hole */
+  box-shadow: inset 0 1px 2px rgba(44,26,14,0.4), 0 0 0 1px rgba(92,61,38,0.16);
 }
 
-.skill-hang-tag:nth-child(odd)  { transform: rotate(-1.5deg); }
-.skill-hang-tag:nth-child(even) { transform: rotate(1deg); }
+.skill-tile:nth-child(odd)  { transform: rotate(-1.5deg); }
+.skill-tile:nth-child(even) { transform: rotate(1.2deg); }
 
-.skill-hang-tag:hover {
-  box-shadow: 2px 4px 10px rgba(44,26,14,0.18);
-  background: #fff;
-  color: var(--brown);
-}
-
-.skill-hang-tag:nth-child(odd):hover  { transform: rotate(5deg) translateY(-3px); }
-.skill-hang-tag:nth-child(even):hover { transform: rotate(-5deg) translateY(-3px); }
-
-/* contact */
- 
-.contact-section {
-  min-height: calc(100dvh - 57px);
-  display: flex;
-  align-items: center;
-  border-bottom: none;
-}
- 
-/* width: 100% and margin-inline: auto come from the shared .section > .contact-wrap rule;
-   here we only override the max-width and add positioning context for the stamp */
-.contact-section .contact-wrap {
-  position: relative;
-  max-width: 900px;
-}
- 
-.contact-stamp {
-  position: absolute;
-  top: 3.25rem;
-  right: 0;
-  width: 150px;
-  height: 150px;
-  border: 1.5px dashed var(--brown4);
-  border-radius: 50%;
-  display: flex;
+.skill-tile-ico {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  transform: rotate(-9deg);
-  color: var(--brown3);
-  font-family: var(--mono);
-  font-size: 13px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  text-align: center;
-  line-height: 1.4;
-  padding: 0.5rem;
-  background: rgba(255,255,255,0.45);
+  width: 20px;
+  height: 20px;
+  font-size: 19px;
+  line-height: 1;
+  flex: none;
 }
- 
+
+/* single-tone glyph fallbacks (Tabler) sit in a warm ink so they read as a
+   deliberate second tier next to the full-color brand marks */
+.skill-tile-ico i.ti { font-size: 18px; color: var(--brown2); }
+.skill-tile-emoji { font-size: 17px; }
+
+.skill-tile-name {
+  font-family: var(--body);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--brown);
+  letter-spacing: -0.005em;
+}
+
+.skill-tile:hover {
+  background: #fff;
+  border-color: rgba(92,61,38,0.32);
+  box-shadow: 2px 6px 14px rgba(44,26,14,0.18);
+}
+
+/* swing a little further from the hole on hover */
+.skill-tile:nth-child(odd):hover  { transform: rotate(4deg) translateY(-3px); }
+.skill-tile:nth-child(even):hover { transform: rotate(-4deg) translateY(-3px); }
+
+/* contact: closing CTA. ultra-minimal, cream, lots of whitespace, big bold
+   read, with a single strip of washi tape as the only scrapbook nod */
+.contact-section {
+  border-bottom: none;
+  padding-top: clamp(3.5rem, 9vh, 6rem);
+  padding-bottom: clamp(3rem, 7vh, 5rem);
+}
+
+.contact-min {
+  max-width: 640px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+/* a small envelope sticker: the contact section's motif, saying 'reach out'.
+   kept square since it sits alone over centered text; soft shadow lifts it */
+.contact-envelope {
+  display: block;
+  width: 66px;
+  height: auto;
+  margin: 0 auto 2.2rem;
+  overflow: visible;
+  filter: drop-shadow(1px 3px 2px rgba(74, 55, 40, 0.16));
+}
+
+/* the flap lifts open when you reach the closing block */
+.env-flap {
+  transform-box: fill-box;
+  transform-origin: center top;
+  transition: transform 0.45s cubic-bezier(0.34, 1.4, 0.64, 1);
+}
+
+.contact-min:hover .env-flap {
+  transform: scaleY(-1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .env-flap { transition: none; }
+}
+
 .contact-title {
   font-family: var(--display);
   font-weight: 600;
-  font-size: clamp(56px, 8.5vw, 104px);
+  font-size: clamp(60px, 10vw, 116px);
   line-height: 0.98;
   letter-spacing: 0.005em;
   color: var(--brown);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
 }
- 
-.contact-title-accent {
-  position: relative;
-  display: inline-block;
-  color: var(--brown);
-}
- 
-.contact-title-accent::after {
-  content: "";
-  position: absolute;
-  left: -8px;
-  right: -10px;
-  bottom: 0.08em;
-  height: 0.34em;
-  background: #FFE17D;
-  opacity: 0.6;
-  transform: rotate(-1.4deg);
-  border-radius: 2px;
-  z-index: -1;
-}
- 
+
 .contact-sub {
-  font-size: 18px;
+  font-size: 17px;
   color: var(--brown2);
-  line-height: 1.65;
+  line-height: 1.6;
   font-weight: 400;
-  max-width: 38rem;
-  margin-bottom: 0.85rem;
+  max-width: 30rem;
+  margin: 0 auto 2.25rem;
 }
 
-.contact-sub:last-of-type {
-  margin-bottom: 2.5rem;
-}
- 
-.contact-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-}
- 
-.contact-link {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  flex: 1 1 220px;
-  min-width: 220px;
-  background: #fff;
-  border-radius: 4px;
-  padding: 1.5rem 1.5rem 1.25rem;
-  box-shadow:
-    2px 2px 0px var(--border),
-    4px 4px 0px rgba(44, 26, 14, 0.06),
-    0 6px 20px rgba(44, 26, 14, 0.09);
-  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
-}
- 
-.contact-link::before {
-  content: "";
-  position: absolute;
-  top: -9px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 46px;
-  height: 16px;
-  background: rgba(184, 150, 122, 0.35);
-  border-radius: 2px;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.5);
-}
- 
-.contact-link:nth-child(1) { transform: rotate(-1.2deg); }
-.contact-link:nth-child(2) { transform: rotate(0.9deg); }
-.contact-link:nth-child(3) { transform: rotate(-0.6deg); }
- 
-.contact-link:hover {
-  transform: rotate(0deg) translateY(-6px) scale(1.03);
-  box-shadow:
-    0 0 0 1px var(--brown4),
-    0 16px 40px rgba(44, 26, 14, 0.16);
-}
- 
-.contact-link i {
-  font-size: 22px;
-  color: var(--brown4);
-  transition: color 0.25s;
-}
- 
-.contact-link:hover i { color: var(--brown2); }
- 
-.contact-link-value {
-  font-family: var(--body);
-  font-size: 15px;
-  font-weight: 500;
+.contact-email {
+  display: inline-block;
+  font-family: var(--display);
+  font-size: clamp(24px, 4vw, 40px);
+  font-weight: 600;
   color: var(--brown);
-  word-break: break-word;
-}
- 
-.contact-link-label {
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--brown3);
-  transition: color 0.25s;
-}
- 
-.contact-link:hover .contact-link-label { color: var(--brown2); }
-
-/* footer */
-
-footer {
-  padding: 1.75rem clamp(1.25rem, 4vw, 2.75rem);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 4px;
+  transition: border-color 0.25s, transform 0.25s;
 }
 
-.footer-links {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-.footer-icon-link {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3px;
-  color: var(--muted);
-  transition: color 0.2s, transform 0.2s;
-  text-decoration: none;
-}
-
-.footer-icon-link:hover {
-  color: var(--brown3);
+.contact-email:hover {
+  border-color: var(--brown3);
   transform: translateY(-2px);
 }
 
-.footer-icon-link i { font-size: 19px; }
-
-.footer-icon-link span {
-  font-family: var(--display);
-  font-size: 10px;
-  letter-spacing: 0.03em;
-}
-
-.footer-divider {
-  width: 1px;
-  height: 26px;
-  background: var(--border);
-}
-
-.footer-right {
+.contact-social {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 3px;
+  gap: 1.6rem;
+  justify-content: center;
+  margin-top: 2rem;
 }
 
-.footer-note {
+.contact-social a {
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brown3);
+  transition: color 0.2s;
+}
+
+.contact-social a:hover { color: var(--brown); }
+
+/* footer: one quiet centered line */
+
+footer {
+  padding: 1.75rem clamp(1.25rem, 4vw, 2.75rem) 2.25rem;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.footer-line {
+  font-family: var(--mono);
+  font-size: 12px;
   color: var(--muted);
   letter-spacing: 0.04em;
 }
 
-.footer-made {
-  font-family: var(--display);
-  font-size: 12px;
-  color: var(--brown4);
-}
-
 
 /* responsive */
+
+/* below full-desktop width the company + role + date stop fitting on one line,
+   which stranded the pinned-right date on its own line. drop it to its own line
+   above the company instead (full-screen layout is unchanged) */
+@media (max-width: 1080px) {
+  .exp-date-full {
+    order: -1;
+    margin-left: 0;
+    width: 100%;
+    margin-bottom: 8px;
+    white-space: normal;
+  }
+}
 
 @media (max-width: 900px) {
   .hero-inner {
@@ -983,18 +1509,12 @@ footer {
   .hero-right { justify-content: flex-start; }
 
   .hero-visual { margin-left: 0; max-width: 320px; }
-
-  .skills-columns {
-    grid-template-columns: 1fr;
-    gap: 1.75rem;
-  }
 }
 
 @media (max-width: 768px) {
-  .hero { min-height: calc(100dvh - 57px); padding: 1.75rem 1.25rem 1.5rem; }
+  .hero { padding: 1.75rem 1.25rem 1.5rem; }
   .hero-name { font-size: clamp(52px, 14vw, 72px); }
   .proj-grid { grid-template-columns: 1fr; }
-  .two-col { grid-template-columns: 1fr; }
   .section { padding: 2.25rem 1.25rem; }
   nav { padding: 1rem 1.25rem; }
   .nav-section-link { display: none; }
@@ -1004,15 +1524,12 @@ footer {
   .proj-card--tilt-right { transform: none; }
   .proj-card--solo { max-width: none; }
 
-  .exp-row { grid-template-columns: 1fr; gap: 0.5rem; }
-  .exp-meta { flex-direction: row; align-items: baseline; gap: 8px; }
+  .exp-row { grid-template-columns: 100px minmax(0, 1fr); gap: 0 16px; }
+  .exp-logo img { max-height: 58px; max-width: 92px; }
 
   .skills-board { padding: 1.5rem 1.25rem 1.75rem; }
 
-  .contact-section { min-height: auto; padding: 2.5rem 1.25rem 3rem; }
-  .contact-stamp { display: none; }
-  .contact-title { font-size: clamp(44px, 13vw, 64px); }
-  .contact-link { min-width: 100%; }
+  .contact-section { padding: 3rem 1.25rem 3.25rem; }
 }
 
 

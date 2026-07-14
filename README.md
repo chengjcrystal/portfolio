@@ -1,8 +1,8 @@
 <p align="center">
-  <img src=".github/assets/readme-banner.png" alt="Crystal Cheng, cream-portfolio" width="820">
+  <img src=".github/assets/readme-banner.png" alt="Crystal Cheng, portfolio" width="820">
 </p>
 
-# ⋆˚✩ cream-portfolio ✩˚⋆
+# ⋆˚✩ portfolio ✩˚⋆
 
 my personal site, made to look like one of my scrapbook pages. i'm crystal, a cs and applied math student at uc berkeley, and i'm a little too into scrapbooking, so instead of reaching for a template i built my portfolio out of tape, polaroids, and pretty css. it's one long page: my software and ml work, the organizations i help run, and what i'm up to in my free time.
 

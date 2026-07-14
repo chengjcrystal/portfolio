@@ -66,13 +66,15 @@ export default function FreshCheckCard() {
           </div>
         </div>
         <p className="proj-sub">
-          In-browser fruit-freshness classifier. A 24K-parameter CNN runs sub-10ms
-          on-device via ONNX + WebAssembly, just 115 KB.
+          In-browser fruit-freshness classifier: a 24K-parameter CNN (PyTorch to
+          ONNX, WebAssembly) runs sub-10ms fully on-device, no backend and no
+          uploads. 97.7% held-out accuracy, honest after re-splitting out
+          duplicate-image leakage with content and perceptual hashes.
         </p>
         <div className="chip-row">
           <span className="chip">PyTorch</span>
           <span className="chip">ONNX</span>
-          <span className="chip">React</span>
+          <span className="chip">WebAssembly</span>
           <span className="chip">Vercel</span>
         </div>
       </div>

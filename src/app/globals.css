@@ -1012,12 +1012,13 @@ a.proj-card { text-decoration: none; color: inherit; display: block; }
 
 .proj-card--preview .proj-card-inner { padding-top: 1.4rem; }
 
-/* lone card on its own row: span the row but stay one column wide, centered */
+/* lone card on its own row: centered and deliberately smaller than the row-1
+   cards, so visual weight tracks importance (row 1 is the headliners) */
 .proj-card--solo {
   grid-column: 1 / -1;
   justify-self: center;
   width: 100%;
-  max-width: calc(50% - 1rem);
+  max-width: calc(40% - 1rem);
 }
 
 .proj-tape {

@@ -270,7 +270,54 @@ export default function Home() {
         </div>
 
         <div className="proj-grid">
-        
+
+          <article className="proj-card proj-card--preview proj-card--tilt-right">
+            <a
+              className="proj-preview"
+              href="https://github.com/chengjcrystal/reporank"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View RepoRank on GitHub"
+            >
+              <Image
+                className="proj-preview-img"
+                src="/previews/reporank.png"
+                alt="RepoRank search UI with ranked GitHub repository results"
+                fill
+                sizes="(max-width: 768px) 100vw, 520px"
+              />
+              <span className="proj-preview-badge">View code <i className="ti ti-arrow-up-right" /></span>
+            </a>
+            <div className="proj-tape" />
+            <div className="proj-card-inner">
+              <div className="proj-card-top">
+                <div className="proj-name">RepoRank</div>
+                <div className="proj-links">
+                  <a
+                    className="proj-actionlink"
+                    href="https://github.com/chengjcrystal/reporank"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="RepoRank source code on GitHub"
+                  >
+                    <i className="ti ti-brand-github" /> Code
+                  </a>
+                </div>
+              </div>
+              <p className="proj-sub">
+                Search over 157k real GitHub repos: a from-scratch inverted index and
+                BM25/BM25F ranking, a quality-aware re-ranker, and an nDCG eval gate that
+                fails CI on relevance regressions.
+              </p>
+              <div className="chip-row">
+                <span className="chip">Python</span>
+                <span className="chip">FastAPI</span>
+                <span className="chip">BM25F</span>
+                <span className="chip">Information Retrieval</span>
+              </div>
+            </div>
+          </article>
+
           <FreshCheckCard />
 
           <article className="proj-card proj-card--preview proj-card--tilt-right">
@@ -315,42 +362,6 @@ export default function Home() {
                 <span className="chip">BART-MNLI</span>
                 <span className="chip">DeepFace</span>
                 <span className="chip">OpenCV</span>
-              </div>
-            </div>
-          </article>
-
-          <article className="proj-card proj-card--solo proj-card--tilt-left">
-            <div className="proj-tape" />
-            <div className="proj-card-inner">
-              <div className="proj-card-top">
-                <div className="proj-name">
-                  RepoRank
-                  <span className="proj-status">in progress</span>
-                </div>
-                <div className="proj-links">
-                  <a
-                    className="proj-actionlink"
-                    href="https://github.com/chengjcrystal/reporank"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="RepoRank source code on GitHub"
-                  >
-                    <i className="ti ti-brand-github" /> Code
-                  </a>
-                  <span className="proj-actionlink proj-actionlink--muted">
-                    <i className="ti ti-tool" /> Demo soon
-                  </span>
-                </div>
-              </div>
-              <p className="proj-sub">
-                GitHub search engine ranking with a hand-written BM25 over an inverted
-                index, served through a typed FastAPI.
-              </p>
-              <div className="chip-row">
-                <span className="chip">FastAPI</span>
-                <span className="chip">Python</span>
-                <span className="chip">BM25</span>
-                <span className="chip">Information Retrieval</span>
               </div>
             </div>
           </article>

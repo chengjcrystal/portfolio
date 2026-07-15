@@ -320,7 +320,7 @@ export default function Home() {
 
           <FreshCheckCard />
 
-          <article className="proj-card proj-card--preview proj-card--tilt-right">
+          <article className="proj-card proj-card--preview proj-card--solo proj-card--tilt-right">
             <a
               className="proj-preview"
               href="https://huggingface.co/spaces/chengjcrystal/mbti-guesser"

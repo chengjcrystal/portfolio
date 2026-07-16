@@ -460,8 +460,8 @@ export default function Home() {
             <span className="lead-org">Society of Women Engineers</span>
             <h3 className="lead-title">Treasurer</h3>
             <p className="lead-cap">
-              Budget and finance for Berkeley&rsquo;s largest engineering org,
-              funding corporate collaborations and K-12 STEM outreach.
+              Budget and finance for one of Berkeley&rsquo;s largest engineering
+              orgs, funding corporate collaborations and K-12 STEM outreach.
             </p>
             <div className="lead-metrics">
               <span className="lead-metric"><b>$60K+</b> managed</span>

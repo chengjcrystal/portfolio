@@ -157,7 +157,7 @@ export default function Home() {
               <div className="exp-top">
                 <span className="exp-company">Hyve Solutions</span>
                 <span className="exp-role">Software Engineer Intern</span>
-                <span className="exp-date-full">Jun 2026 – Present</span>
+                <span className="exp-date-full">Jun 2026 – Aug 2026</span>
               </div>
               <p className="exp-desc">
                 Building an LLM document-processing platform in Python with prompt

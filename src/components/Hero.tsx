@@ -114,7 +114,7 @@ export default function Hero() {
           </h1>
 
           <p className="hero-desc">
-          Currently a Software Engineer Intern at Hyve Solutions, building{" "}
+          Most recently a Software Engineer Intern at Hyve Solutions, building{" "}
           <span className="hero-desc-nowrap">AI-enabled</span> workflow solutions
           while sipping a{" "}
           <span className="hero-desc-nowrap">cup of vanilla espresso&nbsp;⋆.˚☕︎</span>

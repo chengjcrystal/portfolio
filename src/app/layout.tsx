@@ -32,6 +32,21 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Crystal Cheng Portfolio",
   description: "CS + Applied Math at UC Berkeley. Full-stack, AWS, and ML work.",
+  metadataBase: new URL("https://chengjcrystal.vercel.app"),
+  openGraph: {
+    title: "Crystal Cheng Portfolio",
+    description: "CS + Applied Math at UC Berkeley. Full-stack, AWS, and ML work.",
+    url: "https://chengjcrystal.vercel.app",
+    siteName: "Crystal Cheng Portfolio",
+    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Crystal Cheng Portfolio",
+    description: "CS + Applied Math at UC Berkeley. Full-stack, AWS, and ML work.",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function RootLayout({

@@ -818,7 +818,6 @@ nav {
   padding: 1.5rem 0.75rem;
   border-bottom: 0.5px solid var(--bg2);
   border-radius: 10px;
-  transition: background 0.25s, color 0.25s, padding 0.2s;
 }
 
 .exp-row:last-child { border-bottom: none; }
@@ -828,7 +827,6 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 /* normalized to a consistent visual weight, capped by height, centered on one axis */
@@ -840,10 +838,6 @@ nav {
   display: block;
 }
 
-.exp-row:hover .exp-logo {
-  transform: translateY(-2px) rotate(-2deg);
-}
-
 .exp-date-full {
   font-family: var(--mono);
   font-size: 12px;
@@ -851,7 +845,6 @@ nav {
   font-weight: 400;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  transition: color 0.25s;
   line-height: 1.5;
   /* pin to the right edge of the row so each entry fills the full width,
      giving the section a right anchor to balance the left-aligned content */
@@ -874,7 +867,6 @@ nav {
   color: var(--brown);
   letter-spacing: -0.015em;
   line-height: 1.05;
-  transition: color 0.25s;
 }
 
 .exp-role {
@@ -884,7 +876,6 @@ nav {
   text-transform: uppercase;
   color: var(--brown3);
   font-weight: 400;
-  transition: color 0.25s;
 }
 
 .exp-desc {
@@ -894,24 +885,6 @@ nav {
   font-weight: 400;
   max-width: 62ch;
   margin-bottom: 12px;
-  transition: color 0.25s;
-}
-
-.exp-row:hover {
-  background: #E8D8C4;
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-.exp-row:hover .exp-date-full { color: var(--brown2); }
-.exp-row:hover .exp-company   { color: var(--brown); }
-.exp-row:hover .exp-role      { color: var(--brown2); }
-.exp-row:hover .exp-desc      { color: var(--brown2); }
-
-.exp-row:hover .chip {
-  background: rgba(255, 255, 255, 0.7);
-  border-color: rgba(92, 61, 38, 0.42);
-  color: var(--brown);
 }
 
 .chip-row {

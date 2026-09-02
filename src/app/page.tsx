@@ -160,9 +160,9 @@ export default function Home() {
                 <span className="exp-date-full">Jun 2026 – Aug 2026</span>
               </div>
               <p className="exp-desc">
-                Owned the AI test-coverage workflow (AnalAIze/GenerAIte/ValidAIte)
-                end to end, shipping RAG-grounded LLM features across a Flask +
-                Neo4j + Azure OpenAI stack.
+                Built the AI test-coverage workflow (AnalAIze/GenerAIte/ValidAIte)
+                and shipped RAG-grounded LLM features on a Flask + Neo4j +
+                Azure OpenAI stack.
               </p>
               <div className="chip-row">
                 <span className="chip">Flask</span>

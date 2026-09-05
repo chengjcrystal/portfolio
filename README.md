@@ -4,7 +4,7 @@
 
 # ⋆˚✩ portfolio ✩˚⋆
 
-my personal site, made to look like one of my scrapbook pages. i'm crystal, a cs and applied math student at uc berkeley, and i'm a little too into scrapbooking, so instead of reaching for a template i built my portfolio out of tape, polaroids, and pretty css. it's one long page: my software and ml work, the organizations i help run, and what i'm up to in my free time.
+my personal site, made to look like one of my scrapbook pages. i'm crystal, a cs and applied math student at uc berkeley, and i'm a little too into scrapbooking, so instead of reaching for a template i built my portfolio out of polaroids and pretty css. it's one long page: my software and ml work, the organizations i help run, and what i'm up to in my free time.
 
 ⟡ live: [chengjcrystal.vercel.app](https://chengjcrystal.vercel.app)
 

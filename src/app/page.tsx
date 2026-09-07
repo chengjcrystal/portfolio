@@ -315,6 +315,7 @@ export default function Home() {
                 <span className="chip">FastAPI</span>
                 <span className="chip">BM25F</span>
                 <span className="chip">Information Retrieval</span>
+                <span className="chip">Claude API</span>
               </div>
             </div>
           </article>

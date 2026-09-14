@@ -275,10 +275,10 @@ export default function Home() {
           <article className="proj-card proj-card--preview proj-card--tilt-right">
             <a
               className="proj-preview"
-              href="https://github.com/chengjcrystal/reporank"
+              href="https://reporank-jgoo.onrender.com"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="View RepoRank on GitHub"
+              aria-label="View RepoRank live"
             >
               <Image
                 className="proj-preview-img"
@@ -287,7 +287,7 @@ export default function Home() {
                 fill
                 sizes="(max-width: 768px) 100vw, 520px"
               />
-              <span className="proj-preview-badge">View code <i className="ti ti-arrow-up-right" /></span>
+              <span className="proj-preview-badge">View live <i className="ti ti-arrow-up-right" /></span>
             </a>
             <div className="proj-tape" />
             <div className="proj-card-inner">

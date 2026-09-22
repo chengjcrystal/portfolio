@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Sans, JetBrains_Mono, Nunito, Fredoka } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import ScrollHandler from "@/components/ScrollHandler";
@@ -73,6 +74,7 @@ export default function RootLayout({
         {children}
         <Footer />
         <ScrollHandler />
+        {process.env.NODE_ENV === "production" && <Analytics />}
       </body>
     </html>
   );

@@ -324,7 +324,7 @@ export default function Home() {
 
           <FreshCheckCard />
 
-          <article className="proj-card proj-card--preview proj-card--solo proj-card--tilt-right">
+          <article className="proj-card proj-card--preview proj-card--tilt-right">
             <a
               className="proj-preview"
               href="https://huggingface.co/spaces/chengjcrystal/mbti-guesser"
@@ -335,7 +335,7 @@ export default function Home() {
               <Image
                 className="proj-preview-img"
                 src="/previews/mbti.png"
-                alt="MBTI Guesser app interface"
+                alt="MBTI Guesser type radar app interface"
                 fill
                 sizes="(max-width: 768px) 100vw, 520px"
               />
@@ -366,6 +366,51 @@ export default function Home() {
                 <span className="chip">BART-MNLI</span>
                 <span className="chip">DeepFace</span>
                 <span className="chip">OpenCV</span>
+              </div>
+            </div>
+          </article>
+
+          <article className="proj-card proj-card--preview proj-card--tilt-left">
+            <a
+              className="proj-preview"
+              href="https://chengjcrystal.github.io/random-dance-play/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View Random Dance Play live"
+            >
+              <Image
+                className="proj-preview-img"
+                src="/previews/random-dance-play.png"
+                alt="Random Dance Play retro desktop UI with a song catalog browser"
+                fill
+                sizes="(max-width: 768px) 100vw, 520px"
+              />
+              <span className="proj-preview-badge">View live <i className="ti ti-arrow-up-right" /></span>
+            </a>
+            <div className="proj-tape" />
+            <div className="proj-card-inner">
+              <div className="proj-card-top">
+                <div className="proj-name">Random Dance Play</div>
+                <div className="proj-links">
+                  <a
+                    className="proj-actionlink"
+                    href="https://github.com/chengjcrystal/random-dance-play"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Random Dance Play source code on GitHub"
+                  >
+                    <i className="ti ti-brand-github" /> Code
+                  </a>
+                </div>
+              </div>
+              <p className="proj-sub">
+                Shuffles k-pop dance-practice clips, hides the song name for a guessing
+                window, and casts to a TV, all client-side through the YouTube iframe API.
+              </p>
+              <div className="chip-row">
+                <span className="chip">JavaScript</span>
+                <span className="chip">YouTube IFrame API</span>
+                <span className="chip">LocalStorage</span>
               </div>
             </div>
           </article>

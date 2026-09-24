@@ -274,7 +274,7 @@ export default function Home() {
 
         <div className="proj-grid">
 
-          <article className="proj-card proj-card--preview proj-card--tilt-right">
+          <article className="proj-card proj-card--preview proj-card--tilt" style={{ "--tilt-deg": "-2.4deg" } as React.CSSProperties}>
             <a
               className="proj-preview"
               href="https://reporank-jgoo.onrender.com"
@@ -324,7 +324,7 @@ export default function Home() {
 
           <FreshCheckCard />
 
-          <article className="proj-card proj-card--preview proj-card--tilt-right">
+          <article className="proj-card proj-card--preview proj-card--tilt" style={{ "--tilt-deg": "2.6deg" } as React.CSSProperties}>
             <a
               className="proj-preview"
               href="https://huggingface.co/spaces/chengjcrystal/mbti-guesser"
@@ -370,7 +370,7 @@ export default function Home() {
             </div>
           </article>
 
-          <article className="proj-card proj-card--preview proj-card--tilt-left">
+          <article className="proj-card proj-card--preview proj-card--tilt" style={{ "--tilt-deg": "-1.6deg" } as React.CSSProperties}>
             <a
               className="proj-preview"
               href="https://chengjcrystal.github.io/random-dance-play/"

@@ -29,7 +29,7 @@ export default function FreshCheckCard() {
   }, [open]);
 
   return (
-    <article className="proj-card proj-card--preview proj-card--tilt-left">
+    <article className="proj-card proj-card--preview proj-card--tilt" style={{ "--tilt-deg": "1.8deg" } as React.CSSProperties}>
       <button
         type="button"
         className="proj-preview proj-preview--btn"

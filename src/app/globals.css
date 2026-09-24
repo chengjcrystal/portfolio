@@ -930,8 +930,9 @@ nav {
   cursor: default;
 }
 
-.proj-card--tilt-left  { transform: rotate(-1.5deg); }
-.proj-card--tilt-right { transform: rotate(1.2deg); }
+/* each card sets its own --tilt-deg inline so the row reads as scattered
+   scrapbook photos instead of two columns mirroring the same two angles */
+.proj-card--tilt { transform: rotate(var(--tilt-deg, 0deg)); }
 
 .proj-card:hover {
   transform: rotate(0deg) translateY(-6px) scale(1.02);
@@ -1478,8 +1479,7 @@ footer {
   .nav-section-link { display: none; }
   footer { padding: 1.25rem 1.25rem; }
 
-  .proj-card--tilt-left,
-  .proj-card--tilt-right { transform: none; }
+  .proj-card--tilt { transform: none; }
   .proj-card--solo { max-width: none; }
 
   .exp-row { grid-template-columns: 100px minmax(0, 1fr); gap: 0 16px; }
@@ -1507,8 +1507,7 @@ footer {
     transition: opacity 0.5s ease, transform 0.5s ease;
   }
 
-  .proj-card--tilt-left  { transform: translateY(20px) rotate(-1.5deg); }
-  .proj-card--tilt-right { transform: translateY(20px) rotate(1.2deg); }
+  .proj-card--tilt { transform: translateY(20px) rotate(var(--tilt-deg, 0deg)); }
 
   .visible { opacity: 1 !important; }
 
@@ -1516,11 +1515,9 @@ footer {
   .exp-row.visible,
   .skill-group.visible { transform: translateY(0); }
 
-  .proj-card--tilt-left.visible  { transform: rotate(-1.5deg); }
-  .proj-card--tilt-right.visible { transform: rotate(1.2deg); }
+  .proj-card--tilt.visible { transform: rotate(var(--tilt-deg, 0deg)); }
 
-  .proj-card--tilt-left.visible:hover,
-  .proj-card--tilt-right.visible:hover {
+  .proj-card--tilt.visible:hover {
     transform: rotate(0deg) translateY(-6px) scale(1.02) !important;
   }
 }

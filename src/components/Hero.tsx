@@ -70,13 +70,22 @@ export default function Hero() {
     timers.current.set(idx, t);
   };
 
-  // ripple outward from hovered letter index
+  // words sit on separate rows, so a ripple should never cross a word boundary
+  const wordBoundsForIndex = (idx: number) => {
+    const word = NAME_WORDS.find(w => idx >= w.start && idx < w.start + w.text.length);
+    return word ? { start: word.start, end: word.start + word.text.length - 1 } : null;
+  };
+
+  // ripple outward from hovered letter index, clamped to its own word
   const handleLetterEnter = (idx: number) => {
+    const bounds = wordBoundsForIndex(idx);
     for (let dist = 0; dist < FALLOFF.length; dist++) {
       const scale     = FALLOFF[dist];
       const baseDelay = dist * 55;
-      animateLetter(idx - dist, scale, baseDelay);
-      if (dist > 0) animateLetter(idx + dist, scale, baseDelay);
+      const left  = idx - dist;
+      const right = idx + dist;
+      if (!bounds || left >= bounds.start) animateLetter(left, scale, baseDelay);
+      if (dist > 0 && (!bounds || right <= bounds.end)) animateLetter(right, scale, baseDelay);
     }
   };
 

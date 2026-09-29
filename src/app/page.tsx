@@ -330,12 +330,12 @@ export default function Home() {
               href="https://huggingface.co/spaces/chengjcrystal/mbti-guesser"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="View MBTI Guesser live"
+              aria-label="View MBTI Radar live"
             >
               <Image
                 className="proj-preview-img"
                 src="/previews/mbti.png"
-                alt="MBTI Guesser type radar app interface"
+                alt="MBTI Radar app interface"
                 fill
                 sizes="(max-width: 768px) 100vw, 520px"
               />
@@ -344,14 +344,14 @@ export default function Home() {
             <div className="proj-tape" />
             <div className="proj-card-inner">
               <div className="proj-card-top">
-                <div className="proj-name">MBTI Guesser</div>
+                <div className="proj-name">MBTI Radar</div>
                 <div className="proj-links">
                   <a
                     className="proj-actionlink"
                     href="https://github.com/chengjcrystal/mbti-guesser"
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label="MBTI Guesser source code on GitHub"
+                    aria-label="MBTI Radar source code on GitHub"
                   >
                     <i className="ti ti-brand-github" /> Code
                   </a>

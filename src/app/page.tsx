@@ -327,7 +327,7 @@ export default function Home() {
           <article className="proj-card proj-card--preview proj-card--tilt" style={{ "--tilt-deg": "2.6deg" } as React.CSSProperties}>
             <a
               className="proj-preview"
-              href="https://huggingface.co/spaces/chengjcrystal/mbti-guesser"
+              href="https://huggingface.co/spaces/chengjcrystal/mbti-radar"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="View MBTI Radar live"
@@ -335,7 +335,7 @@ export default function Home() {
               <Image
                 className="proj-preview-img"
                 src="/previews/mbti.png"
-                alt="MBTI Radar app interface"
+                alt="MBTI Radar title card with five pixel-art animal characters, each labeled with an MBTI type"
                 fill
                 sizes="(max-width: 768px) 100vw, 520px"
               />
@@ -348,7 +348,7 @@ export default function Home() {
                 <div className="proj-links">
                   <a
                     className="proj-actionlink"
-                    href="https://github.com/chengjcrystal/mbti-guesser"
+                    href="https://github.com/chengjcrystal/mbti-radar"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="MBTI Radar source code on GitHub"
@@ -381,7 +381,7 @@ export default function Home() {
               <Image
                 className="proj-preview-img"
                 src="/previews/random-dance-play.png"
-                alt="Random Dance Play retro desktop UI with a song catalog browser"
+                alt="Random Dance Play title banner with cherries, a star and retro pop-up windows"
                 fill
                 sizes="(max-width: 768px) 100vw, 520px"
               />

@@ -335,7 +335,7 @@ export default function Home() {
               <Image
                 className="proj-preview-img"
                 src="/previews/mbti.png"
-                alt="MBTI Radar title card with five pixel-art animal characters, each labeled with an MBTI type"
+                alt="MBTI Radar landing page with three fanned pixel-art cards in common, holo and rainbow finishes, and their pull rates"
                 fill
                 sizes="(max-width: 768px) 100vw, 520px"
               />
@@ -358,8 +358,9 @@ export default function Home() {
                 </div>
               </div>
               <p className="proj-sub">
-                Free-form MBTI via BART-MNLI zero-shot, fusing text, image, and numeric
-                signals with DeepFace + OpenCV.
+                Zero-shot MBTI from your answers, a photo, and social stats, dealt back
+                as a collectible card pack with holo and rainbow finishes and shareable
+                guess links.
               </p>
               <div className="chip-row">
                 <span className="chip">Hugging Face Transformers</span>

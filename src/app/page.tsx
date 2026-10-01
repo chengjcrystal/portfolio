@@ -359,8 +359,8 @@ export default function Home() {
               </div>
               <p className="proj-sub">
                 Zero-shot MBTI from your answers, a photo, and social stats, dealt back
-                as a collectible card pack with holo and rainbow finishes and shareable
-                guess links.
+                as a collectible card pack with holo and rainbow finishes and invite
+                links that can carry a guess.
               </p>
               <div className="chip-row">
                 <span className="chip">Hugging Face Transformers</span>

@@ -22,6 +22,8 @@ const SKILL_GROUPS = [
       { name: "Bootstrap", icon: "devicon-bootstrap-plain colored" },
       { name: "Tailwind", icon: "devicon-tailwindcss-original colored" },
       { name: "REST APIs", icon: "ti ti-api", fallback: true },
+      { name: "vLLM", icon: "ti ti-bolt", fallback: true },
+      { name: "Triton", icon: "ti ti-cpu", fallback: true },
     ],
   },
   {
@@ -35,6 +37,8 @@ const SKILL_GROUPS = [
       { name: "Git", icon: "devicon-git-plain colored" },
       { name: "Linux", icon: "devicon-linux-plain colored" },
       { name: "Docker", icon: "devicon-docker-plain colored" },
+      { name: "Kubernetes", icon: "devicon-kubernetes-plain colored" },
+      { name: "Prometheus", icon: "devicon-prometheus-original colored" },
       { name: "Jenkins", icon: "devicon-jenkins-plain colored" },
       { name: "Terraform", icon: "devicon-terraform-plain colored" },
       { name: "Postman", icon: "devicon-postman-plain colored" },
@@ -162,9 +166,9 @@ export default function Home() {
                 <span className="exp-date-full">Jun 2026 – Aug 2026</span>
               </div>
               <p className="exp-desc">
-                Built the AI test-coverage workflow (AnalAIze/GenerAIte/ValidAIte)
-                and shipped RAG-grounded LLM features on a Flask + Neo4j +
-                Azure OpenAI stack.
+                Cut per-request LLM candidates ~95% with a Neo4j vector-search RAG
+                pipeline, and shipped an allowlist-guarded test-case search API
+                that Analyze now uses as its shared retrieval layer.
               </p>
               <div className="chip-row">
                 <span className="chip">Flask</span>
@@ -185,8 +189,8 @@ export default function Home() {
                 <span className="exp-date-full">Sep 2025 – Dec 2025</span>
               </div>
               <p className="exp-desc">
-                Shipped 15+ reusable React/TypeScript components from Figma in
-                Next.js, with MySQL schemas and a Node.js email automation pipeline.
+                Designed REST API contracts and MySQL schemas for a 15-person team and
+                shipped 15+ reusable React/TypeScript components from Figma in Next.js.
               </p>
               <div className="chip-row">
                 <span className="chip">Next.js</span>
@@ -230,8 +234,8 @@ export default function Home() {
                 <span className="exp-date-full">May 2024 – May 2025</span>
               </div>
               <p className="exp-desc">
-                Raised mentor-match accuracy 12% with a repeatable AWS Lambda +
-                DynamoDB pipeline scoring compatibility across 4 dimensions.
+                Raised mentor-match accuracy 12% by tuning 6 scoring weights, with a
+                versioned AWS Lambda + DynamoDB eval pipeline across 4 dimensions.
               </p>
               <div className="chip-row">
                 <span className="chip">AWS Lambda</span>

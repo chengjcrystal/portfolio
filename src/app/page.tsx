@@ -50,6 +50,7 @@ const SKILL_GROUPS = [
     items: [
       { name: "Python", icon: "devicon-python-plain colored" },
       { name: "C/C++", icon: "devicon-cplusplus-plain colored" },
+      { name: "Java", icon: "devicon-java-plain colored" },
       { name: "JavaScript", icon: "devicon-javascript-plain colored" },
       { name: "Go", icon: "devicon-go-plain colored" },
       { name: "Ruby", icon: "devicon-ruby-plain colored" },
